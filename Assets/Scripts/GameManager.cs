@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<string> targetToppings = new List<string>();
     
     [Header("Main Timer")]
-    [SerializeField] private Text timerText;
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float startTime = 60f;
     [SerializeField] private bool isCountdown = true;
     private float currentTime;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isRunning = true;
         currentTime = isCountdown ? startTime : 0f;
         UpdateTimerDisplay();
         GenerateOrder();
