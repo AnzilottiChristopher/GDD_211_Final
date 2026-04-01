@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             isRunning = false;
             OnDayEnd();
         }
+        UpdateTimerUI();
     }
 
     private void OnDayEnd()
