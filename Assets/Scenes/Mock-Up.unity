@@ -129,6 +129,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5009543901479559932, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
   m_PrefabInstance: {fileID: 3165601342227387434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &92654920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
+  m_PrefabInstance: {fileID: 3165601342227387434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c007529ceec3145ae1f83304416d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!224 &219848886 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2843332436941627030, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
@@ -588,9 +599,37 @@ PrefabInstance:
       value: Starfish Sprinkles
       objectReference: {fileID: 0}
     - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2009154500}
+    - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 92654920}
+    - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: onCustomerPanelEnable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754915998432616545, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5003341489904865846, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -922,16 +961,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 219848887}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
+      propertyPath: customerPanel
+      value: 
+      objectReference: {fileID: 2009154500}
+    - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: customerPrefab
       value: 
       objectReference: {fileID: 4647719999163387419, guid: 54d139718d0bd0a4e8ac74b8ff9a33bc, type: 3}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: spawnInterfalMax
-      value: 7.8
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: spawnInterfalMin
-      value: 4.53
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: customerSlots.Array.size

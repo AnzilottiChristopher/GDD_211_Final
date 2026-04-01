@@ -102,6 +102,10 @@ public class Customer : MonoBehaviour
         if(isServed) return;
         isServed = true;
 
+        if(patienceCoroutine != null)
+        {
+            GameManager.Instance.StopCoroutine(patienceCoroutine);
+        }
         if(correct)
         {
             int points = 10 + Mathf.FloorToInt(patience);
@@ -120,6 +124,11 @@ public class Customer : MonoBehaviour
     {
         if(isServed) return;
         isServed = true;
+
+        if(patienceCoroutine != null)
+        {
+            GameManager.Instance.StopCoroutine(patienceCoroutine);
+        }
         Debug.Log("Customer left - patience ran out");
         GameManager.Instance.ReleaseSlot(SlotIndex);
     }

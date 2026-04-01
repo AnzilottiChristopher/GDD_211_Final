@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform[] customerSlots;
     [SerializeField] private float spawnInterfalMin = 8f;
     [SerializeField] private float spawnInterfalMax = 20f;
+    private Queue<int> pendingSpawns = new Queue<int>();
+    [SerializeField] private GameObject customerPanel;
     //[SerializeField] private Transform canvasParent;
 
     private Customer[] slotOccupants;
@@ -90,9 +93,26 @@ public class GameManager : MonoBehaviour
         {
             if(slotOccupants[i] == null)
             {
-                SpawnCustomerAtSlot(i);
+                spawnOnAlive(i);
                 return;
             }
+        }
+    }
+    private void spawnOnAlive(int slotIndex)
+    {
+        if(!customerPanel.activeSelf)
+        {
+            pendingSpawns.Enqueue(slotIndex);
+            return;
+        }
+        SpawnCustomerAtSlot(slotIndex);
+    }
+    public void onCustomerPanelEnable()
+    {
+        while(pendingSpawns.Count > 0)
+        {
+            int slotIndex = pendingSpawns.Dequeue();
+            SpawnCustomerAtSlot(slotIndex);
         }
     }
     private void SpawnCustomerAtSlot(int slotIndex)
@@ -121,10 +141,9 @@ public class GameManager : MonoBehaviour
             if(selectedCustomer == slotOccupants[slotIndex])
             {
                 selectedCustomer = null;
-
-                Destroy(slotOccupants[slotIndex].gameObject);
-                slotOccupants[slotIndex] = null;
-            }
+}
+            Destroy(slotOccupants[slotIndex].gameObject);
+            slotOccupants[slotIndex] = null;
         }
     }
 
