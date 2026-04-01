@@ -1,33 +1,59 @@
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using System.Collections;
 
 public class Customer : MonoBehaviour
 {
     [Header("Customer Patience Levels")]
     [SerializeField] private TextMeshProUGUI patienceText;
-    [SerializeField] private float patience = 20f;
+    [SerializeField] private float maxPatience = 25f;
+    private float patience;
     
-    [Header("References")]
-    [SerializeField] private CookieBuilder cookieBuilder;
-    [SerializeField] private TextMeshProUGUI orderText;
-    [SerializeField] private TextMeshProUGUI resultText;
 
+    [Header("Order Display")] 
+    [SerializeField] private TextMeshProUGUI orderText;
     [Header("Order Data")]
     [SerializeField] private int targetDough;
     [SerializeField] private List<string> targetToppings = new List<string>();
 
-    private string[] possibleToppings = { "Krill", "Seaweed", "Starfish Sprinkles" };
-    private void Update() {
-        if(patience > 0)
+    private static readonly string[] PossibleToppings = { "Krill", "Seaweed", "Starfish Sprinkles" };
+
+    public int SlotIndex { get; private set; }
+
+    private bool isServed = false;
+
+    private Button clickButton;
+    private Coroutine patienceCoroutine;
+
+    public void Init(int slotIndex)
+    {
+        SlotIndex = slotIndex;
+        patience = maxPatience;
+
+        clickButton = GetComponent<Button>();
+        if(clickButton != null)
         {
-            patience -= Time.deltaTime;
-            UpdateTimerDisplay();
+            clickButton.onClick.AddListener(() => GameManager.Instance.SelectCustomer(this));
         }
-        else
+        GenerateOrder();
+        patienceCoroutine = GameManager.Instance.RunCoroutine(PatienceRoutine());
+    }
+    private IEnumerator PatienceRoutine()
+    {
+        while(patience > 0f && !isServed)
         {
-            patience = 0;
-            OnTimerEnd();
+            yield return null;
+            patience -= Time.deltaTime;
+            UpdatePatienceUI();
+        }
+
+        if(!isServed)
+        {
+            patience = 0f;
+            OnPatienceExpired();
         }
     }
     
@@ -38,43 +64,62 @@ public class Customer : MonoBehaviour
         //Add more game logic
     }
     
-    private void UpdateTimerDisplay()
+    private void UpdatePatienceUI()
     {
-        int minutes = Mathf.FloorToInt( patience / 60 );
-        int seconds = Mathf.FloorToInt( patience % 60 );
-        int milliseconds = Mathf.FloorToInt((patience * 1000) % 1000);
-
-        patienceText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+        if(patienceText != null)
+        {
+            int seconds = Mathf.CeilToInt(patience);
+            patienceText.text = seconds.ToString() + "s";
+        }
     }
     private void GenerateOrder()
     {
         targetToppings.Clear();
 
         targetDough = Random.Range(1, 5);
-        targetToppings.Add(possibleToppings[Random.Range(0, possibleToppings.Length)]);
+        targetToppings.Add(PossibleToppings[Random.Range(0, PossibleToppings.Length)]);
 
         UpdateOrderUI();
     }
 
     private void UpdateOrderUI()
     {
-        orderText.text = "Dough: " + targetDough + "\nTopping: " + targetToppings[0];
+        if(orderText != null)
+            orderText.text = "Dough: " + targetDough + "\nTopping: " + targetToppings[0];
     }
-    private bool CheckOrder()
-    {
-        if(cookieBuilder.GetDough() != targetDough) return false;
 
-        List<string> playerToppings = cookieBuilder.GetToppings();
-        
-        if(playerToppings.Count == 0)
-        {
-            return false;
-        }
-        if(!targetToppings.Contains(playerToppings[0]))
-        {
-            return false;
-        }
-        
+    public bool CheckOrder(int servedDough, List<string> servedToppings)
+    {
+        if(servedDough != targetDough) return false;
+        if(servedToppings == null || servedToppings.Count == 0) return false;
+        if(!targetToppings.Contains(servedToppings[0])) return false;
         return true;
+    }
+
+    public void Serve(bool correct)
+    {
+        if(isServed) return;
+        isServed = true;
+
+        if(correct)
+        {
+            int points = 10 + Mathf.FloorToInt(patience);
+            GameManager.Instance.AddScore(points);
+            Debug.Log("Correct order! + " + points + " points");
+        }
+        else
+        {
+            Debug.Log("Wrong order - customer unhappy");
+        }
+
+        GameManager.Instance.ReleaseSlot(SlotIndex);
+    }
+
+    private void OnPatienceExpired()
+    {
+        if(isServed) return;
+        isServed = true;
+        Debug.Log("Customer left - patience ran out");
+        GameManager.Instance.ReleaseSlot(SlotIndex);
     }
 }

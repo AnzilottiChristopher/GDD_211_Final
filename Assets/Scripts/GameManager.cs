@@ -1,84 +1,151 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Customer")]
-    [SerializeField] private List<Customer> customers = new List<Customer>();
+    public static GameManager Instance { get; private set; }
 
-    [Header("Main Timer")]
+    [Header("Customer Spawning")]
+    [SerializeField] private GameObject customerPrefab;
+    [SerializeField] private Transform[] customerSlots;
+    [SerializeField] private float spawnInterfalMin = 8f;
+    [SerializeField] private float spawnInterfalMax = 20f;
+    //[SerializeField] private Transform canvasParent;
+
+    private Customer[] slotOccupants;
+
+    private Customer selectedCustomer = null;
+
+    [Header("Day Timer")]
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private float startTime = 60f;
-    [SerializeField] private bool isCountdown = true;
+    [SerializeField] private float dayDuration = 120;
     private float currentTime;
     private bool isRunning = false;
-    
-    
+
+    [Header("Score")]
+    [SerializeField] TextMeshProUGUI scoreText;
+    private int score = 0;
+
+
+    void Awake()
+    {
+        if(Instance != null && Instance != this) { Destroy(gameObject); return; }
+
+        Instance = this;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        slotOccupants = new Customer[customerSlots.Length];
+        currentTime = dayDuration;
         isRunning = true;
-        currentTime = isCountdown ? startTime : 0f;
-        UpdateTimerDisplay();
+        UpdateScoreUI();
+        StartCoroutine(SpawnRoutine());
     }
 
     private void Update() {
         if (!isRunning) return;
 
-        if(isCountdown)
+        currentTime -= Time.deltaTime;
+        if(currentTime <= 0f)
         {
-            if(currentTime > 0)
-            {
-                currentTime -= Time.deltaTime;
-                UpdateTimerDisplay();
-            }
-            else
-            {
-                currentTime = 0;
-                isRunning = false;
-                OnTimerEnd();
-            }
+            currentTime = 0f;
+            isRunning = false;
+            OnDayEnd();
         }
-        
-        //Spawn Customers/Orders
     }
 
-    private void OnTimerEnd()
+    private void OnDayEnd()
     {
         Debug.Log("Time has run out");
+        Debug.Log("FINAL SCORE: " + score);
         //Game Over logic
     }
 
-    private void UpdateTimerDisplay()
+    private void UpdateTimerUI()
     {
         int minutes = Mathf.FloorToInt( currentTime / 60 );
         int seconds = Mathf.FloorToInt( currentTime % 60 );
-        int milliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000);
-
-        timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-    
-    
-    // public void Serve()
-    // {
-    //     bool correct = CheckOrder();
 
-    //     if(correct)
-    //     {
-    //         resultText.text = "Correct";
-    //     }
-    //     else
-    //     {
-    //         resultText.text = "Wrong!";
-    //     }
-    // }
-    
-    
-    private void GenerateCustomer()
+    private IEnumerator SpawnRoutine()
     {
-        Customer customer = new Customer();
+        yield return new WaitForSeconds(2f);
 
+        while(isRunning)
+        {
+            float wait = Random.Range(spawnInterfalMin, spawnInterfalMax);
+            yield return new WaitForSeconds(wait);
+
+            if(isRunning) TrySpawnCustomer();
+        }
+    }
+
+    private void TrySpawnCustomer()
+    {
+        for(int i = 0; i < slotOccupants.Length; i++)
+        {
+            if(slotOccupants[i] == null)
+            {
+                SpawnCustomerAtSlot(i);
+                return;
+            }
+        }
+    }
+    private void SpawnCustomerAtSlot(int slotIndex)
+    {
+        GameObject customerPanel = GameObject.Find("Customer Panel");
+        Transform panelTransform = customerPanel.transform;
+
+        GameObject go = Instantiate(customerPrefab, panelTransform);
+        RectTransform rt = go.GetComponent<RectTransform>();
+        rt.anchoredPosition = customerSlots[slotIndex].GetComponent<RectTransform>().anchoredPosition;
+        //rt.localScale = Vector3.one;
+        Customer c = go.GetComponent<Customer>();
+        c.Init(slotIndex);
+        slotOccupants[slotIndex] = c;
+    }
+
+    public void ReleaseSlot(int slotIndex)
+    {
+        if(slotOccupants[slotIndex] != null)
+        {
+            if(selectedCustomer == slotOccupants[slotIndex])
+            {
+                selectedCustomer = null;
+
+                Destroy(slotOccupants[slotIndex].gameObject);
+                slotOccupants[slotIndex] = null;
+            }
+        }
+    }
+
+    public void SelectCustomer(Customer customer)
+    {
+        selectedCustomer = customer;
+        Debug.Log("Selected Customer in slot " + customer.SlotIndex);
+    }
+
+    public Customer GetSelectedCustomer() => selectedCustomer;
+
+    public void AddScore(int points)
+    {
+        score += points;
+        UpdateScoreUI();
+    }
+
+    private void UpdateScoreUI()
+    {
+        if(scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
+    }
+
+    public Coroutine RunCoroutine(IEnumerator routine)
+    {
+        return StartCoroutine(routine);
     }
 }
