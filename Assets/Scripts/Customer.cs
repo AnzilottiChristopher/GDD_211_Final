@@ -33,7 +33,8 @@ public class Customer : MonoBehaviour
         SlotIndex = slotIndex;
         patience = maxPatience;
 
-        clickButton = GetComponent<Button>();
+        clickButton = GetComponentInChildren<Button>();
+        Debug.Log("Button Found" + (clickButton != null));
         if(clickButton != null)
         {
             clickButton.onClick.AddListener(() => GameManager.Instance.SelectCustomer(this));

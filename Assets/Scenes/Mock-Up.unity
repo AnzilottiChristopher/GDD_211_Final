@@ -145,6 +145,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ac52bf57a02b646843fa11006b6f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookieBuilder
+--- !u!114 &528598958 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &560994666
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +487,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 594773343}
     m_Modifications:
+    - target: {fileID: 403454016092544009, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_Name
+      value: Bake Button
+      objectReference: {fileID: 0}
     - target: {fileID: 1763830813069214710, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -509,6 +524,34 @@ PrefabInstance:
       value: CookieBuilder, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2619667421578400376, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 219848887}
+    - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartBake
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CookieBuilder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -657,7 +700,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8279371024508676770, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
@@ -672,17 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!114 &224357789282951569 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2619667421578400376, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
-  m_PrefabInstance: {fileID: 224357789282951567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &465373606605450153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1110,7 +1143,7 @@ PrefabInstance:
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: bakeButton
       value: 
-      objectReference: {fileID: 224357789282951569}
+      objectReference: {fileID: 528598958}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: serveButton
       value: 

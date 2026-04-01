@@ -106,6 +106,8 @@ public class CookieBuilder : MonoBehaviour
 
     public void Serve()
     {
+        Debug.Log("Serve called, isReady: " + isReady);
+
         if(!isReady)
         {
             UpdateStatus("Bake the cookie first");
@@ -113,6 +115,8 @@ public class CookieBuilder : MonoBehaviour
         }
 
         Customer target = GameManager.Instance.GetSelectedCustomer();
+        Debug.Log("Target customer: " + (target == null ? "NULL" : "slot " + target.SlotIndex));
+
         if(target == null)
         {
             UpdateStatus("Click a customer first!");

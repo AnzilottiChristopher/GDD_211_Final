@@ -103,7 +103,12 @@ public class GameManager : MonoBehaviour
         RectTransform rt = go.GetComponent<RectTransform>();
         rt.anchoredPosition = customerSlots[slotIndex].GetComponent<RectTransform>().anchoredPosition;
         //rt.localScale = Vector3.one;
-        Customer c = go.GetComponent<Customer>();
+        Customer c = go.GetComponentInChildren<Customer>();
+        if(c == null)
+        {
+            Debug.LogError("No Customer Component found");
+            return;
+        }
         c.Init(slotIndex);
         slotOccupants[slotIndex] = c;
     }
