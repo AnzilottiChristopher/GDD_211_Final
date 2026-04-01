@@ -5,15 +5,9 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private CookieBuilder cookieBuilder;
-    [SerializeField] private Text orderText;
-    [SerializeField] private Text resultText;
+    [Header("Customer")]
+    [SerializeField] private List<Customer> customers = new List<Customer>();
 
-    [Header("Order Data")]
-    [SerializeField] private int targetDough;
-    [SerializeField] private List<string> targetToppings = new List<string>();
-    
     [Header("Main Timer")]
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float startTime = 60f;
@@ -21,7 +15,6 @@ public class GameManager : MonoBehaviour
     private float currentTime;
     private bool isRunning = false;
     
-    private string[] possibleToppings = { "Krill", "Seaweed", "Starfish Sprinkles" };
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +22,6 @@ public class GameManager : MonoBehaviour
         isRunning = true;
         currentTime = isCountdown ? startTime : 0f;
         UpdateTimerDisplay();
-        GenerateOrder();
     }
 
     private void Update() {
@@ -49,6 +41,8 @@ public class GameManager : MonoBehaviour
                 OnTimerEnd();
             }
         }
+        
+        //Spawn Customers/Orders
     }
 
     private void OnTimerEnd()
@@ -66,53 +60,25 @@ public class GameManager : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
     }
     
-    private void GenerateOrder()
-    {
-        targetToppings.Clear();
-
-        targetDough = Random.Range(1, 5);
-        targetToppings.Add(possibleToppings[Random.Range(0, possibleToppings.Length)]);
-
-        UpdateOrderUI();
-    }
-
-    private void UpdateOrderUI()
-    {
-        orderText.text = "Dough: " + targetDough + "\nTopping: " + targetToppings[0];
-    }
     
-    public void Serve()
-    {
-        bool correct = CheckOrder();
+    // public void Serve()
+    // {
+    //     bool correct = CheckOrder();
 
-        if(correct)
-        {
-            resultText.text = "Correct";
-        }
-        else
-        {
-            resultText.text = "Wrong!";
-        }
-        
-        cookieBuilder.ResetCookie();
-        GenerateOrder();
-    }
+    //     if(correct)
+    //     {
+    //         resultText.text = "Correct";
+    //     }
+    //     else
+    //     {
+    //         resultText.text = "Wrong!";
+    //     }
+    // }
     
-    private bool CheckOrder()
+    
+    private void GenerateCustomer()
     {
-        if(cookieBuilder.GetDough() != targetDough) return false;
+        Customer customer = new Customer();
 
-        List<string> playerToppings = cookieBuilder.GetToppings();
-        
-        if(playerToppings.Count == 0)
-        {
-            return false;
-        }
-        if(!targetToppings.Contains(playerToppings[0]))
-        {
-            return false;
-        }
-        
-        return true;
     }
 }
