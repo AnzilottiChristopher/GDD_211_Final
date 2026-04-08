@@ -1,152 +1,186 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using TMPro;
 using UnityEngine.UI;
-using System.Data;
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 
+// Orchestrates the full cookie-building flow:
+// 1. Player selects dough type (button) → DoughMinigame activates
+// 2. DoughMinigame completes → OvenMinigame activates
+// 3. OvenMinigame completes (with quality) → ToppingMinigame activates
+// 4. ToppingMinigame completes → cookie is ready to serve
 public class CookieBuilder : MonoBehaviour
 {
     [Header("Cookie State")]
-    [SerializeField] private int dough = -1;
-    [SerializeField] private List<string> toppings = new List<string>();
+    private int dough = -1;
+    private List<string> toppings = new List<string>();
+    private float cookQuality = 1f;     // set by oven minigame, affects score
 
-    [Header("Oven")]
-    [SerializeField] private float bakeDuration = 8f;
-    [SerializeField] private Button bakeButton;
-    [SerializeField] private TextMeshProUGUI bakeTimerText;
+    [Header("Minigames")]
+    [SerializeField] private Doughminigame doughMinigame;
+    [SerializeField] private Ovenminigame ovenMinigame;
+    [SerializeField] private Toppingminigame toppingMinigame;
+
+    [Header("Minigame Panels")]
+    // Each minigame lives in its own panel — enable/disable to show/hide
+    [SerializeField] private GameObject doughMinigamePanel;
+    [SerializeField] private GameObject ovenMinigamePanel;
+    [SerializeField] private GameObject toppingMinigamePanel;
+
+    [Header("Serve")]
     [SerializeField] private Button serveButton;
 
-    [Header("FeedBack")]
+    [Header("Feedback")]
     [SerializeField] private TextMeshProUGUI statusText;
 
-    private bool isBaking = false;
     private bool isReady = false;
 
     void Start()
     {
         SetServeButtonActive(false);
-        SetBakeButtonActive(true);
-        UpdateStatus("Select a dough and toppings");
+        HideAllMinigamePanels();
+        UpdateStatus("Select a dough to begin!");
+
+        // Subscribe to minigame completion events
+        if (doughMinigame != null)
+            doughMinigame.OnComplete += OnDoughComplete;
+        if (ovenMinigame != null)
+            ovenMinigame.OnComplete += OnOvenComplete;
+        if (toppingMinigame != null)
+            toppingMinigame.OnComplete += OnToppingComplete;
     }
 
+    void OnDestroy()
+    {
+        // Always unsubscribe to avoid memory leaks
+        if (doughMinigame != null)
+            doughMinigame.OnComplete -= OnDoughComplete;
+        if (ovenMinigame != null)
+            ovenMinigame.OnComplete -= OnOvenComplete;
+        if (toppingMinigame != null)
+            toppingMinigame.OnComplete -= OnToppingComplete;
+    }
+
+    // ─── Step 1: Dough Selection ──────────────────────────────────
+    // Wire each dough button to SelectDough(int) with value 1-4
     public void SelectDough(int newDough)
     {
-        if(isBaking) return;
+        if (isReady) return;
+
         dough = newDough;
-        // Debug.Log("Selected dough: " + dough);
-        UpdateStatus("Dough " + dough + " selected");
-    }
-    public void AddTopping(string topping)
-    {
-        if(isBaking) return;
-        toppings.Clear();
-        toppings.Add(topping);
-        // Debug.Log("Added toppings: " + topping);
-        UpdateStatus("Topping: " + topping);
-    }
-    public void ResetCookie()
-    {
-        if(isBaking) return;
-        dough = -1;
-        toppings.Clear();
-        isReady = false;
-        SetServeButtonActive(false);
-        SetBakeButtonActive(true);
-        UpdateStatus("Cookie reset.");
+        Debug.Log("Selected dough: " + dough);
+        UpdateStatus("Dough " + dough + " selected — mix it up!");
+
+        // Activate dough minigame
+        ShowPanel(doughMinigamePanel);
+        if (doughMinigame != null)
+            doughMinigame.StartMinigame();
     }
 
-    public void StartBake()
+    // ─── Step 2: Dough Minigame Complete → Oven ───────────────────
+    private void OnDoughComplete()
     {
-        Debug.Log("StartBake called — dough: " + dough + " toppings: " + toppings.Count);
+        HideAllMinigamePanels();
+        UpdateStatus("Dough mixed! Into the oven...");
 
-        if(isBaking || isReady) return;
-
-        if(dough == -1)
-        {
-            UpdateStatus("Pick a dough first!");
-            return;
-        }
-        if(toppings.Count == 0)
-        {
-            UpdateStatus("Add a topping first!");
-            return;
-        }
-        StartCoroutine(BakeRoutine());
+        ShowPanel(ovenMinigamePanel);
+        if (ovenMinigame != null)
+            ovenMinigame.StartMinigame();
     }
 
-    private IEnumerator BakeRoutine()
+    // ─── Step 3: Oven Complete → Toppings ─────────────────────────
+    private void OnOvenComplete(float quality)
     {
-        isBaking = true;
-        SetBakeButtonActive(false);
-        float remaining = bakeDuration;
+        cookQuality = quality;
+        HideAllMinigamePanels();
+        UpdateStatus("Baked! Now add toppings.");
 
-        while(remaining > 0f)
-        {
-            remaining -= Time.deltaTime;
-            if(bakeTimerText != null)
-            {
-                bakeTimerText.text = "Baking: " + Mathf.CeilToInt(remaining) + "s";
-            }
-            yield return null;
-        }
+        ShowPanel(toppingMinigamePanel);
+        if (toppingMinigame != null)
+            toppingMinigame.StartMinigame();
+    }
 
-        isBaking = false;
+    // ─── Step 4: Topping Minigame Complete → Ready to Serve ───────
+    private void OnToppingComplete()
+    {
+        HideAllMinigamePanels();
         isReady = true;
-
-        if(bakeTimerText != null)
-        {
-            bakeTimerText.text = "";
-        }
-
-        UpdateStatus("Cookie ready! Click a customer to serve.");
+        UpdateStatus("Cookie ready! Click a customer then hit Serve.");
         SetServeButtonActive(true);
     }
 
+    // ─── Topping selection ────────────────────────────────────────
+    // Still wire topping buttons to this — determines WHICH topping
+    // goes on, separate from the minigame
+    public void AddTopping(string topping)
+    {
+        toppings.Clear();
+        toppings.Add(topping);
+        Debug.Log("Added topping: " + topping);
+    }
+
+    // ─── Serving ──────────────────────────────────────────────────
     public void Serve()
     {
-        Debug.Log("Serve called, isReady: " + isReady);
-
-        if(!isReady)
+        if (!isReady)
         {
-            UpdateStatus("Bake the cookie first");
+            UpdateStatus("Finish making the cookie first!");
             return;
         }
 
         Customer target = GameManager.Instance.GetSelectedCustomer();
-        Debug.Log("Target customer: " + (target == null ? "NULL" : "slot " + target.SlotIndex));
-
-        if(target == null)
+        if (target == null)
         {
             UpdateStatus("Click a customer first!");
             return;
         }
 
         bool correct = target.CheckOrder(dough, toppings);
-        target.Serve(correct);
+        
+        // Apply quality modifier to score — handled in Customer.Serve()
+        // Pass quality through so Customer can scale points
+        target.Serve(correct, cookQuality);
 
         UpdateStatus(correct ? "Perfect order!" : "Wrong order...");
-
         ResetCookie();
     }
 
+    // ─── Reset ────────────────────────────────────────────────────
+    public void ResetCookie()
+    {
+        dough = -1;
+        toppings.Clear();
+        cookQuality = 1f;
+        isReady = false;
+        HideAllMinigamePanels();
+        SetServeButtonActive(false);
+        UpdateStatus("Select a dough to begin!");
+    }
+
+    // ─── Helpers ──────────────────────────────────────────────────
     public int GetDough() => dough;
     public List<string> GetToppings() => toppings;
 
-    private void SetBakeButtonActive(bool active)
+    private void ShowPanel(GameObject panel)
     {
-        if(bakeButton != null) bakeButton.interactable = active;
+        if (panel != null) panel.SetActive(true);
+    }
+
+    private void HideAllMinigamePanels()
+    {
+        if (doughMinigamePanel != null)    doughMinigamePanel.SetActive(false);
+        if (ovenMinigamePanel != null)     ovenMinigamePanel.SetActive(false);
+        if (toppingMinigamePanel != null)  toppingMinigamePanel.SetActive(false);
     }
 
     private void SetServeButtonActive(bool active)
     {
-        if(serveButton != null) serveButton.interactable = active;
+        if (serveButton != null) serveButton.interactable = active;
     }
 
     private void UpdateStatus(string msg)
     {
         Debug.Log("[CookieBuilder] " + msg);
-        if(statusText != null) statusText.text = msg;
+        if (statusText != null) statusText.text = msg;
     }
 }

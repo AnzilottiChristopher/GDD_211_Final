@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using System.Numerics;
+using UnityEngine.InputSystem;
 
 public class Doughminigame : MonoBehaviour
 {
@@ -67,9 +67,9 @@ public class Doughminigame : MonoBehaviour
 
     private float GetMouseAngle()
     {
-        float x = Input.mousePosition.x - screenCenter.x;
-        float y = Input.mousePosition.y - screenCenter.y;
-
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        float x = mousePos.x - screenCenter.x;
+        float y = mousePos.y - screenCenter.y;
         return Mathf.Atan2(y, x) * Mathf.Rad2Deg;
     }
 

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Ovenminigame : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class Ovenminigame : MonoBehaviour
     {
         if(!isActive) return;
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Keyboard.current.spaceKey.isPressed)
         {
             currentTemp += heatRate * Time.deltaTime;
         }

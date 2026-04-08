@@ -140,6 +140,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c007529ceec3145ae1f83304416d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!1 &188461872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8230134129564128562, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &188461876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6004104436942166863, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188461872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693362a1e15848344a1b9092c393119c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Doughminigame
 --- !u!224 &219848886 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2843332436941627030, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
@@ -156,6 +172,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ac52bf57a02b646843fa11006b6f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CookieBuilder
+--- !u!1 &255684451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7173080840631221336, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &255684456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3501189690070762670, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255684451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a3043d5eb6ad9439fe52b3f871427b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Toppingminigame
+--- !u!1 &314500175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7745848001855963158, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &314500177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7251713621477723848, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314500175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa13482b7dcc09408ce6887f616a742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ovenminigame
 --- !u!114 &528598958 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
@@ -1196,9 +1244,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5386622372602016679}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: ovenMinigame
+      value: 
+      objectReference: {fileID: 314500177}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: bakeTimerText
       value: 
       objectReference: {fileID: 224357789282951568}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: doughMinigame
+      value: 
+      objectReference: {fileID: 188461876}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: toppingMinigame
+      value: 
+      objectReference: {fileID: 255684456}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: ovenMinigamePanel
+      value: 
+      objectReference: {fileID: 314500175}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: doughMinigamePanel
+      value: 
+      objectReference: {fileID: 188461872}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: toppingMinigamePanel
+      value: 
+      objectReference: {fileID: 255684451}
     - target: {fileID: 2843332436941627030, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
