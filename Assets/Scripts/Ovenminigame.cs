@@ -11,13 +11,21 @@ public class Ovenminigame : MonoBehaviour
     [SerializeField] private float maxTemp = 100f;
     [SerializeField] private float startTemp = 50f;
     [SerializeField] private float heatRate = 35f;
-    [SerializeField] private float coolRate = 28;
+    [SerializeField] private float coolRate = 28f;
+    [SerializeField] private float minHeatRate = 35f;
+    [SerializeField] private float minCoolRate = 28f;
+    [SerializeField] private float maxHeatRate = 45f;
+    [SerializeField] private float maxCoolRate = 38f;
     [SerializeField] private float greenZoneMin = 40f;
     [SerializeField] private float greenZoneMax = 85f;
 
     [Header("Green Zone Movement")]
     [SerializeField] private float zoneSpeed = 3f;        // How fast the zone moves
     [SerializeField] private float zoneMoveAmount = 20f;   // How far it travels up/down
+    [SerializeField] private float minZoneSpeed = 3f;
+    [SerializeField] private float minZoneMoveAmount = 20f;
+    [SerializeField] private float maxZoneSpeed = 7f;
+    [SerializeField] private float maxZoneMoveAmount = 30f;
 
     [Header("UI")]
     [SerializeField] private Image tempFillBar;
@@ -46,10 +54,10 @@ public class Ovenminigame : MonoBehaviour
     public void StartMinigame()
     {
         float progress = GameManager.Instance.GetDayProgress();
-        zoneSpeed = Mathf.Lerp(3f, 20f, progress); //! Change values as wanted
-        zoneMoveAmount = Mathf.Lerp(10f, 35f, progress); //! Change values as wanted
-        heatRate = Mathf.Lerp(35f, 45f, progress); //! Change values as wanted
-        coolRate = Mathf.Lerp(28f, 38f, progress); //! Change values as wanted
+        zoneSpeed = Mathf.Lerp(minZoneSpeed, maxZoneSpeed, progress); 
+        zoneMoveAmount = Mathf.Lerp(minZoneMoveAmount, maxZoneMoveAmount, progress); 
+        heatRate = Mathf.Lerp(minHeatRate, maxHeatRate, progress);
+        coolRate = Mathf.Lerp(minCoolRate, maxCoolRate, progress); 
         currentTemp = startTemp;
         timeRemaining = bakeDuration;
         burnAccumulator = 0f;

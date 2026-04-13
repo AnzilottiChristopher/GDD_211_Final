@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         slotOccupants = new Customer[customerSlots.Length];
         currentTime = dayDuration;
+        // currentTime = 20;
         isRunning = true;
         UpdateScoreUI();
         StartCoroutine(SpawnRoutine());
@@ -176,6 +177,6 @@ public class GameManager : MonoBehaviour
     
     public float GetDayProgress()
     {
-        return 1f - (currentTime - dayDuration);
+        return 1f - (currentTime / dayDuration);
     }
 }

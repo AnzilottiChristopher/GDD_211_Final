@@ -1047,12 +1047,24 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7251713621477723848, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: maxCoolRate
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251713621477723848, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: maxHeatRate
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251713621477723848, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: bakeDuration
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7251713621477723848, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: greenZoneMin
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251713621477723848, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: maxZoneSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8100155717553687542, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1404,6 +1416,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 821132769}
+    - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
+      propertyPath: dayDuration
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: canvasParent
       value: 
