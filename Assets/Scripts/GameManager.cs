@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("Day Timer")]
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float dayDuration = 120;
+    [SerializeField] private float dayStartTime = 120;
     private float currentTime;
     private bool isRunning = false;
 
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         slotOccupants = new Customer[customerSlots.Length];
-        currentTime = dayDuration;
+        currentTime = dayStartTime;
         // currentTime = 20;
         isRunning = true;
         UpdateScoreUI();
