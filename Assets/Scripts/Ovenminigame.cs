@@ -15,6 +15,10 @@ public class Ovenminigame : MonoBehaviour
     [SerializeField] private float greenZoneMin = 40f;
     [SerializeField] private float greenZoneMax = 85f;
 
+    [Header("Green Zone Movement")]
+    [SerializeField] private float zoneSpeed = 10f;        // How fast the zone moves
+    [SerializeField] private float zoneMoveAmount = 20f;   // How far it travels up/down
+
     [Header("UI")]
     [SerializeField] private Image tempFillBar;
     [SerializeField] private Image greenZoneIndicator;
@@ -27,24 +31,16 @@ public class Ovenminigame : MonoBehaviour
     private float currentTemp;
     private float timeRemaining;
     private float burnAccumulator = 0f;
-
     private bool isActive = false;
+
+    // Store the original zone values
+    private float baseZoneMin;
+    private float baseZoneMax;
+    private float zoneOffset = 0f;
 
     void OnEnable()
     {
-        if(greenZoneIndicator != null && tempFillBar != null)
-        {
-            RectTransform barRect = tempFillBar.GetComponent<RectTransform>();
-            RectTransform zoneRect = greenZoneIndicator.GetComponent<RectTransform>();
-            float barHeight = barRect.rect.height;
-            float zoneBottom = (greenZoneMin / maxTemp) * barHeight;
-            float zoneTop = (greenZoneMax / maxTemp) * barHeight;
-
-            zoneRect.anchorMin = new Vector2(0, greenZoneMin / maxTemp);
-            zoneRect.anchorMax = new Vector2(1, greenZoneMax / maxTemp);
-            zoneRect.offsetMin = Vector2.zero;
-            zoneRect.offsetMax = Vector2.zero;
-        }
+        UpdateGreenZoneUI();
     }
 
     public void StartMinigame()
@@ -54,38 +50,41 @@ public class Ovenminigame : MonoBehaviour
         burnAccumulator = 0f;
         isActive = true;
 
-        if(instructionText != null)
-        {
+        baseZoneMin = greenZoneMin;
+        baseZoneMax = greenZoneMax;
+        zoneOffset = 0f;
+
+        if (instructionText != null)
             instructionText.text = "Hold SPACE to keep the oven hot! Stay in the green zone.";
-        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(!isActive) return;
+        if (!isActive) return;
 
-        if(Keyboard.current.spaceKey.isPressed)
-        {
+        // Move the green zone using a sine wave
+        zoneOffset = Mathf.Sin(Time.time * zoneSpeed) * zoneMoveAmount;
+
+        float currentMin = Mathf.Clamp(baseZoneMin + zoneOffset, 0f, maxTemp);
+        float currentMax = Mathf.Clamp(baseZoneMax + zoneOffset, 0f, maxTemp);
+
+        // Heat / cool
+        if (Keyboard.current.spaceKey.isPressed)
             currentTemp += heatRate * Time.deltaTime;
-        }
         else
-        {
             currentTemp -= coolRate * Time.deltaTime;
-        }
 
         currentTemp = Mathf.Clamp(currentTemp, 0f, maxTemp);
 
-        bool inGreenZone = currentTemp >= greenZoneMin && currentTemp <= greenZoneMax;
-        if (!inGreenZone)
-        {
-            burnAccumulator += Time.deltaTime;
-        }
+        bool inGreenZone = currentTemp >= currentMin && currentTemp <= currentMax;
 
-        UpdateUI(inGreenZone);
+        if (!inGreenZone)
+            burnAccumulator += Time.deltaTime;
+
+        UpdateUI(inGreenZone, currentMin, currentMax);
 
         timeRemaining -= Time.deltaTime;
-        if(timeRemaining <= 0f)
+        if (timeRemaining <= 0f)
         {
             timeRemaining = 0f;
             isActive = false;
@@ -93,30 +92,41 @@ public class Ovenminigame : MonoBehaviour
         }
     }
 
-    private void UpdateUI(bool inGreenZone)
+    private void UpdateGreenZoneUI()
     {
-        if(tempFillBar != null)
-        {
+        UpdateGreenZoneUI(greenZoneMin, greenZoneMax);
+    }
+
+    private void UpdateGreenZoneUI(float zoneMin, float zoneMax)
+    {
+        if (greenZoneIndicator == null || tempFillBar == null) return;
+
+        RectTransform zoneRect = greenZoneIndicator.GetComponent<RectTransform>();
+        zoneRect.anchorMin = new Vector2(0, zoneMin / maxTemp);
+        zoneRect.anchorMax = new Vector2(1, zoneMax / maxTemp);
+        zoneRect.offsetMin = Vector2.zero;
+        zoneRect.offsetMax = Vector2.zero;
+    }
+
+    private void UpdateUI(bool inGreenZone, float currentMin, float currentMax)
+    {
+        // Update the green zone indicator position every frame
+        UpdateGreenZoneUI(currentMin, currentMax);
+
+        if (tempFillBar != null)
             tempFillBar.fillAmount = currentTemp / maxTemp;
-        }
-        if(timerText != null)
-        {
+
+        if (timerText != null)
             timerText.text = "Baking: " + Mathf.CeilToInt(timeRemaining) + "s";
-        }
-        if(statusText != null)
+
+        if (statusText != null)
         {
-            if(currentTemp < greenZoneMin)
-            {
+            if (currentTemp < currentMin)
                 statusText.text = "Too cold! Hold SPACE!";
-            }
-            else if(currentTemp > greenZoneMax)
-            {
+            else if (currentTemp > currentMax)
                 statusText.text = "Too hot! Release SPACE!";
-            }
             else
-            {
                 statusText.text = "Perfect temperature";
-            }
         }
     }
 
@@ -125,11 +135,9 @@ public class Ovenminigame : MonoBehaviour
         float burnRatio = Mathf.Clamp01(burnAccumulator / bakeDuration);
         float quality = 1f - burnRatio;
 
-        if(statusText != null)
-        {
+        if (statusText != null)
             statusText.text = quality > 0.7f ? "Perfectly baked!" : quality > 0.4f ? "A bit burnt..." : "Burnt!";
 
-            OnComplete?.Invoke(quality);
-        }
+        OnComplete?.Invoke(quality);
     }
 }
