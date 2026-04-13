@@ -10,13 +10,13 @@ public class Ovenminigame : MonoBehaviour
     [SerializeField] private float bakeDuration = 8f;
     [SerializeField] private float maxTemp = 100f;
     [SerializeField] private float startTemp = 50f;
-    [SerializeField] private float heatRate = 25f;
-    [SerializeField] private float coolRate = 15f;
+    [SerializeField] private float heatRate = 35f;
+    [SerializeField] private float coolRate = 28;
     [SerializeField] private float greenZoneMin = 40f;
     [SerializeField] private float greenZoneMax = 85f;
 
     [Header("Green Zone Movement")]
-    [SerializeField] private float zoneSpeed = 10f;        // How fast the zone moves
+    [SerializeField] private float zoneSpeed = 3f;        // How fast the zone moves
     [SerializeField] private float zoneMoveAmount = 20f;   // How far it travels up/down
 
     [Header("UI")]
@@ -45,6 +45,11 @@ public class Ovenminigame : MonoBehaviour
 
     public void StartMinigame()
     {
+        float progress = GameManager.Instance.GetDayProgress();
+        zoneSpeed = Mathf.Lerp(3f, 20f, progress); //! Change values as wanted
+        zoneMoveAmount = Mathf.Lerp(10f, 35f, progress); //! Change values as wanted
+        heatRate = Mathf.Lerp(35f, 45f, progress); //! Change values as wanted
+        coolRate = Mathf.Lerp(28f, 38f, progress); //! Change values as wanted
         currentTemp = startTemp;
         timeRemaining = bakeDuration;
         burnAccumulator = 0f;

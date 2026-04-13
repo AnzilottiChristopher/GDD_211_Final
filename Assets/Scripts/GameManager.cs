@@ -173,4 +173,9 @@ public class GameManager : MonoBehaviour
     {
         return StartCoroutine(routine);
     }
+    
+    public float GetDayProgress()
+    {
+        return 1f - (currentTime - dayDuration);
+    }
 }
