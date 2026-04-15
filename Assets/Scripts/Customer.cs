@@ -19,6 +19,7 @@ public class Customer : MonoBehaviour
     [SerializeField] private List<string> targetToppings = new List<string>();
 
     private static readonly string[] PossibleToppings = { "Krill", "Seaweed", "Starfish Sprinkles" };
+    private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
 
     public int SlotIndex { get; private set; }
 
@@ -70,7 +71,10 @@ public class Customer : MonoBehaviour
     private void UpdateOrderUI()
     {
         if (orderText != null)
-            orderText.text = "Dough: " + targetDough + "\nTopping: " + targetToppings[0];
+        {
+            string doughName = DoughNames[targetDough - 1]; // -1 because dough is 1-4
+            orderText.text = "Dough: " + doughName + "\nTopping: " + targetToppings[0];
+        }
     }
 
     private void UpdatePatienceUI()
@@ -82,6 +86,9 @@ public class Customer : MonoBehaviour
     // ─── Order Checking ───────────────────────────────────────────
     public bool CheckOrder(int servedDough, List<string> servedToppings)
     {
+        //Debug.Log("CheckOrder — target dough: " + targetDough + " served dough: " + servedDough);
+        
+        //Debug.Log("CheckOrder — target topping: " + (targetToppings.Count > 0 ? targetToppings[0] : "NONE") + " served topping: " + (servedToppings.Count > 0 ? servedToppings[0] : "NONE"));
         if (servedDough != targetDough) return false;
         if (servedToppings == null || servedToppings.Count == 0) return false;
         if (!targetToppings.Contains(servedToppings[0])) return false;

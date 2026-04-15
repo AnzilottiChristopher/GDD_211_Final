@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   patienceText: {fileID: 8049313014598106167}
-  maxPatience: 25
+  maxPatience: 35
   orderText: {fileID: 6058369509311169624}
   targetDough: 0
   targetToppings: []

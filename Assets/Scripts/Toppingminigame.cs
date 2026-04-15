@@ -8,6 +8,7 @@ public class Toppingminigame : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private int sequenceLength = 4;
+    [SerializeField] private int baseSequenceLength = 3;
 
     [Header("UI")] 
     [SerializeField] private TextMeshProUGUI sequenceText;
@@ -29,6 +30,9 @@ public class Toppingminigame : MonoBehaviour
 
     public void StartMinigame()
     {
+        float difficulty = GameManager.Instance.GetDifficultyMultiplier();
+        sequenceLength = Mathf.RoundToInt(baseSequenceLength * difficulty);
+
         GenerateSequence();
         currentIndex = 0;
         isActive = true;

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("Day Timer")]
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float dayDuration = 120;
+    [SerializeField] private float dayStartTime = 120;
     private float currentTime;
     private bool isRunning = false;
 
@@ -41,7 +42,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         slotOccupants = new Customer[customerSlots.Length];
-        currentTime = dayDuration;
+        currentTime = dayStartTime;
+        // currentTime = 20;
         isRunning = true;
         UpdateScoreUI();
         StartCoroutine(SpawnRoutine());
@@ -102,7 +104,12 @@ public class GameManager : MonoBehaviour
     {
         if(!customerPanel.activeSelf)
         {
-            pendingSpawns.Enqueue(slotIndex);
+            if(!pendingSpawns.Contains(slotIndex))
+            {
+                pendingSpawns.Enqueue(slotIndex);
+                Debug.Log("Queuing spawn for slot: " + slotIndex);
+            }
+            
             return;
         }
         SpawnCustomerAtSlot(slotIndex);
@@ -124,6 +131,9 @@ public class GameManager : MonoBehaviour
         RectTransform rt = go.GetComponent<RectTransform>();
         rt.anchoredPosition = customerSlots[slotIndex].GetComponent<RectTransform>().anchoredPosition;
         //rt.localScale = Vector3.one;
+
+        Debug.Log("Spawning customer at slot " + slotIndex + " position: " + rt.position);
+
         Customer c = go.GetComponentInChildren<Customer>();
         if(c == null)
         {
@@ -172,5 +182,16 @@ public class GameManager : MonoBehaviour
     public Coroutine RunCoroutine(IEnumerator routine)
     {
         return StartCoroutine(routine);
+    }
+    
+    public float GetDayProgress()
+    {
+        return 1f - (currentTime / dayDuration);
+    }
+
+    public float GetDifficultyMultiplier()
+    {
+        float elapsed = dayDuration - currentTime;
+        return Mathf.Lerp(1f, 2f, elapsed / dayDuration);
     }
 }
