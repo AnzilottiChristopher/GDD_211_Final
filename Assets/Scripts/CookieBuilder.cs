@@ -24,6 +24,7 @@ public class CookieBuilder : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button bakeButton;
     [SerializeField] private Button serveButton;
+    [SerializeField] private Button trashButton;
 
     [Header("Feedback")]
     [SerializeField] private TextMeshProUGUI statusText;
@@ -35,6 +36,7 @@ public class CookieBuilder : MonoBehaviour
 
     void Start()
     {
+        SetTrashButtonActive(false);
         SetServeButtonActive(false);
         SetBakeButtonActive(true);
         HideAllMinigamePanels();
@@ -136,6 +138,7 @@ public class CookieBuilder : MonoBehaviour
         isReady = true;
         UpdateStatus("Cookie ready! Click a customer then hit Serve.");
         SetServeButtonActive(true);
+        SetTrashButtonActive(true);
     }
 
     // ─── Serving ──────────────────────────────────────────────────
@@ -174,6 +177,7 @@ public class CookieBuilder : MonoBehaviour
         HideAllMinigamePanels();
         SetBakeButtonActive(true);
         SetServeButtonActive(false);
+        SetTrashButtonActive(false);
         UpdateStatus("Select a dough and topping, then hit Bake!");
     }
 
@@ -207,5 +211,10 @@ public class CookieBuilder : MonoBehaviour
     {
         Debug.Log("[CookieBuilder] " + msg);
         if (statusText != null) statusText.text = msg;
+    }
+    
+    private void SetTrashButtonActive(bool active)
+    {
+        if(trashButton != null) trashButton.interactable = active;
     }
 }
