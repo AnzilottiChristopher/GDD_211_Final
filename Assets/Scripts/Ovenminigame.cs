@@ -8,6 +8,7 @@ public class Ovenminigame : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float bakeDuration = 8f;
+    [SerializeField] private float rushHourBakeDuration = 3f;
     [SerializeField] private float maxTemp = 100f;
     [SerializeField] private float startTemp = 50f;
     [SerializeField] private float heatRate = 35f;
@@ -24,7 +25,7 @@ public class Ovenminigame : MonoBehaviour
     [SerializeField] private float zoneMoveAmount = 20f;   // How far it travels up/down
     [SerializeField] private float minZoneSpeed = 3f;
     [SerializeField] private float minZoneMoveAmount = 20f;
-    [SerializeField] private float maxZoneSpeed = 7f;
+    [SerializeField] private float rushHourMaxZoneSpeed = 7f;
     [SerializeField] private float maxZoneMoveAmount = 30f;
 
     [Header("UI")]
@@ -54,12 +55,13 @@ public class Ovenminigame : MonoBehaviour
     public void StartMinigame()
     {
         float progress = GameManager.Instance.GetDayProgress();
-        zoneSpeed = Mathf.Lerp(minZoneSpeed, maxZoneSpeed, progress); 
+        zoneSpeed = Mathf.Lerp(minZoneSpeed, rushHourMaxZoneSpeed, progress); 
         zoneMoveAmount = Mathf.Lerp(minZoneMoveAmount, maxZoneMoveAmount, progress); 
         heatRate = Mathf.Lerp(minHeatRate, maxHeatRate, progress);
         coolRate = Mathf.Lerp(minCoolRate, maxCoolRate, progress); 
         currentTemp = startTemp;
-        timeRemaining = bakeDuration;
+        // timeRemaining = bakeDuration;
+        timeRemaining = Mathf.Lerp(bakeDuration, rushHourBakeDuration, progress);
         burnAccumulator = 0f;
         isActive = true;
 
