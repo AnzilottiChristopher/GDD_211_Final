@@ -8,6 +8,7 @@ public class Doughminigame : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int circlesRequired = 3; 
     [SerializeField] private float angleThreshold = 5f;
+    [SerializeField] private int baseCirclesRequired = 2;
 
     [Header("UI")]
     [SerializeField] private Image progressBar;
@@ -27,6 +28,10 @@ public class Doughminigame : MonoBehaviour
 
     public void StartMinigame()
     {
+        float difficulty = GameManager.Instance.GetDifficultyMultiplier();
+        int circles = Mathf.RoundToInt(baseCirclesRequired * difficulty);
+        circlesRequired = circles;
+
         totalAngle = 0f;
         isActive = true;
         previousAngle = GetMouseAngle();

@@ -188,4 +188,10 @@ public class GameManager : MonoBehaviour
     {
         return 1f - (currentTime / dayDuration);
     }
+
+    public float GetDifficultyMultiplier()
+    {
+        float elapsed = dayDuration - currentTime;
+        return Mathf.Lerp(1f, 2f, elapsed / dayDuration);
+    }
 }
