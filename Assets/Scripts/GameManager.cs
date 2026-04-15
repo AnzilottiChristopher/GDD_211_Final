@@ -104,7 +104,12 @@ public class GameManager : MonoBehaviour
     {
         if(!customerPanel.activeSelf)
         {
-            pendingSpawns.Enqueue(slotIndex);
+            if(!pendingSpawns.Contains(slotIndex))
+            {
+                pendingSpawns.Enqueue(slotIndex);
+                Debug.Log("Queuing spawn for slot: " + slotIndex);
+            }
+            
             return;
         }
         SpawnCustomerAtSlot(slotIndex);
@@ -126,6 +131,9 @@ public class GameManager : MonoBehaviour
         RectTransform rt = go.GetComponent<RectTransform>();
         rt.anchoredPosition = customerSlots[slotIndex].GetComponent<RectTransform>().anchoredPosition;
         //rt.localScale = Vector3.one;
+
+        Debug.Log("Spawning customer at slot " + slotIndex + " position: " + rt.position);
+
         Customer c = go.GetComponentInChildren<Customer>();
         if(c == null)
         {
