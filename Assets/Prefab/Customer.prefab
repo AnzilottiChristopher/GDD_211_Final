@@ -302,7 +302,7 @@ RectTransform:
   m_GameObject: {fileID: 4647719999163387419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16011794, y: 0.2825644, z: 0.2825644}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8614211898093094941}
@@ -313,7 +313,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 157.36388, y: 314.3271}
-  m_SizeDelta: {x: 2303.9998, y: 1295.9999}
+  m_SizeDelta: {x: 1576, y: 2190.2869}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4241848817167402814
 MonoBehaviour:
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8117895036413224671, guid: 1d575c0ba4617cc4b8135b13562a92f2, type: 3}
+  m_Sprite: {fileID: 3978405166752900997, guid: 23e10c71354824b1daca45a9addc8c34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -405,8 +405,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.004364, y: -0.008590698}
+  m_SizeDelta: {x: 79.242, y: 36.193}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5624700133150485798
 CanvasRenderer:
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.740566, g: 1, b: 0.9818732, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
