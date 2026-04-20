@@ -747,7 +747,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2644411690801739243, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_text
-      value: 
+      value: 'Starfish Sprinkles
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3209742800660496409, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -1548,7 +1550,7 @@ PrefabInstance:
       objectReference: {fileID: 4647719999163387419, guid: 54d139718d0bd0a4e8ac74b8ff9a33bc, type: 3}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: spawnInterfalMax
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: spawnInterfalMin
