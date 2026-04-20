@@ -6,14 +6,23 @@ public class DragController : MonoBehaviour
     public Transform Canvas => canvasTransform;
 
     [SerializeField] private Image inventory1_image;
-    [SerializeField] private Transform invetory1_container;
+    [SerializeField] private Transform inventory1_container;
     [SerializeField] private Transform canvasTransform;
-
+    public Transform InventoryContainer => inventory1_container;
     public void DropItem(Item item)
     {
         if (RectOverlap(item.GetComponent<RectTransform>(),inventory1_image.GetComponent<RectTransform>()))
         {
-            item.transform.SetParent(invetory1_container, false); //Add to inventory
+            int limit = item.CameFromInventory ? 5 : 4;
+            if (inventory1_container.childCount < limit)
+            {
+                item.transform.SetParent(inventory1_container, false); //Add to inventory
+            }
+            else
+            {
+                Debug.Log("Inventory Full");
+                item.ResetPosition();
+            }
         }
         else
         {
@@ -22,24 +31,20 @@ public class DragController : MonoBehaviour
         }
     }
 
-    private bool RectOverlap(RectTransform firstRect, RectTransform secondRect)
-    {
-        if (firstRect.position.x + firstRect.rect.width * 0.5f < secondRect.position.x - secondRect.rect.width * 0.5f)
-        {
-            return false;
-        }
-        if (secondRect.position.x + secondRect.rect.width * 0.5f < firstRect.position.x - firstRect.rect.width * 0.5f)
-        {
-            return false;
-        }
-        if (firstRect.position.y + firstRect.rect.height * 0.5f < secondRect.position.y - secondRect.rect.height * 0.5f)
-        {
-            return false;
-        }
-        if (secondRect.position.y + secondRect.rect.height * 0.5f < firstRect.position.y - firstRect.rect.height * 0.5f)
-        {
-            return false;
-        }
-        return true;
-    }
+private bool RectOverlap(RectTransform firstRect, RectTransform secondRect)
+{
+    Rect a = GetWorldRect(firstRect);
+    Rect b = GetWorldRect(secondRect);
+    return a.Overlaps(b);
+}
+
+private Rect GetWorldRect(RectTransform rt)
+{
+    Vector3[] corners = new Vector3[4];
+    rt.GetWorldCorners(corners);
+    // corners[0] = bottom-left, corners[2] = top-right
+    return new Rect(corners[0].x, corners[0].y,
+                    corners[2].x - corners[0].x,
+                    corners[2].y - corners[0].y);
+}
 }

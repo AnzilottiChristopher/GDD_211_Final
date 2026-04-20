@@ -7,6 +7,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
     private Vector3 startPosition;
     private bool isDragging;
     private Vector3 startSize;
+    public bool CameFromInventory { get; private set; }
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
     public void OnPointerDown(PointerEventData eventData)
     {
         isDragging = true;
+        CameFromInventory = transform.parent == dragController.InventoryContainer;
         transform.SetParent(dragController.Canvas, true);
     }
 
@@ -30,5 +32,10 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
         isDragging = false;
         dragController.DropItem(this);
         GetComponent<RectTransform>().sizeDelta = startSize;
+    }
+    public void ResetPosition()
+    {
+        transform.position = startPosition;
+        transform.SetParent(dragController.Canvas, true); // keep it on canvas so it's clickable
     }
 }
