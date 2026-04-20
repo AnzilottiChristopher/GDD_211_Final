@@ -128,6 +128,8 @@ public class GameManager : MonoBehaviour
         Transform panelTransform = customerPanel.transform;
 
         GameObject go = Instantiate(customerPrefab, panelTransform);
+        go.transform.SetSiblingIndex(0);
+
         RectTransform rt = go.GetComponent<RectTransform>();
         rt.anchoredPosition = customerSlots[slotIndex].GetComponent<RectTransform>().anchoredPosition;
         //rt.localScale = Vector3.one;

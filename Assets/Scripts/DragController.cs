@@ -17,6 +17,7 @@ public class DragController : MonoBehaviour
         }
         else
         {
+            Debug.Log("TEST");
              //Remove from inventory
         }
     }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler 
 {
     [SerializeField] private DragController dragController;
     private Vector3 startPosition;
