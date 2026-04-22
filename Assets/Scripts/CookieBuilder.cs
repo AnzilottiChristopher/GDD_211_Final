@@ -148,6 +148,7 @@ public class CookieBuilder : MonoBehaviour
         HideAllMinigamePanels();
         isBaking = false;
         isReady = true;
+        Debug.Log(isReady);
 
         // TODO Make it so it's the image and don't change the children
         doughDisplay.transform.SetParent(cookieItem.transform, false);
@@ -167,6 +168,7 @@ public class CookieBuilder : MonoBehaviour
         toppings.Clear();
         cookQuality = 1f;
         isReady = false;
+        //Debug.Log(isReady);
         isBaking = false;
         HideAllMinigamePanels();
 
@@ -214,5 +216,19 @@ public class CookieBuilder : MonoBehaviour
     {
         Debug.Log("[CookieBuilder] " + msg);
         if (statusText != null) statusText.text = msg;
+    }
+    public void resetFinishedCookie(GameObject item)
+    {
+        item.transform.SetParent(ingredientPanel.transform, false);
+        RectTransform rt = item.GetComponent<RectTransform>();
+        if (rt != null)
+        {
+            rt.anchorMin = new Vector2(0.5f, 0.5f);
+            rt.anchorMax = new Vector2(0.5f, 0.5f);
+            rt.pivot = new Vector2(0.5f, 0.5f);
+            rt.anchoredPosition = Vector2.zero;
+        }
+        item.SetActive(false);
+        
     }
 }

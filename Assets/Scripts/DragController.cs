@@ -45,8 +45,11 @@ public class DragController : MonoBehaviour
         customer.Serve(correct, quality);
 
         // destroy the cookie item and reset the builder
-        Destroy(item.gameObject);
         cookieBuilder.ResetCookie();
+        
+        // TODO Fix Not destroying this game object.
+        cookieBuilder.resetFinishedCookie(item.gameObject);
+        //Destroy(item.gameObject);
     }
 
     private bool RectOverlap(RectTransform firstRect, RectTransform secondRect)
