@@ -18,13 +18,15 @@ public class Customer : MonoBehaviour
     [SerializeField] private int targetDough;
     [SerializeField] private List<string> targetToppings = new List<string>();
 
+    [Header("Highlight")]
+    [SerializeField] private Image highlightImage;
+
     private static readonly string[] PossibleToppings = { "Krill", "Seaweed", "Starfish Sprinkles" };
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
 
     public int SlotIndex { get; private set; }
 
     private bool isServed = false;
-    private Button clickButton;
     private Coroutine patienceCoroutine;
 
     // ─── Init ─────────────────────────────────────────────────────
@@ -32,14 +34,18 @@ public class Customer : MonoBehaviour
     {
         SlotIndex = slotIndex;
         patience = maxPatience;
-
-        clickButton = GetComponentInChildren<Button>();
-        Debug.Log("Button Found: " + (clickButton != null));
-        if (clickButton != null)
-            clickButton.onClick.AddListener(() => GameManager.Instance.SelectCustomer(this));
-
+        SetHighlight(false);
         GenerateOrder();
         patienceCoroutine = GameManager.Instance.RunCoroutine(PatienceRoutine());
+    }
+
+    // ─── Highlight ────────────────────────────────────────────────
+    public void SetHighlight(bool on)
+    {
+        Debug.Log($"SetHighlight({on}) — image is {(highlightImage == null ? "NULL" : "assigned")}");
+
+        if (highlightImage != null)
+            highlightImage.enabled = on;
     }
 
     // ─── Patience Coroutine ───────────────────────────────────────
@@ -72,7 +78,7 @@ public class Customer : MonoBehaviour
     {
         if (orderText != null)
         {
-            string doughName = DoughNames[targetDough - 1]; // -1 because dough is 1-4
+            string doughName = DoughNames[targetDough - 1];
             orderText.text = "Dough: " + doughName + "\nTopping: " + targetToppings[0];
         }
     }
@@ -86,9 +92,6 @@ public class Customer : MonoBehaviour
     // ─── Order Checking ───────────────────────────────────────────
     public bool CheckOrder(int servedDough, List<string> servedToppings)
     {
-        //Debug.Log("CheckOrder — target dough: " + targetDough + " served dough: " + servedDough);
-        
-        //Debug.Log("CheckOrder — target topping: " + (targetToppings.Count > 0 ? targetToppings[0] : "NONE") + " served topping: " + (servedToppings.Count > 0 ? servedToppings[0] : "NONE"));
         if (servedDough != targetDough) return false;
         if (servedToppings == null || servedToppings.Count == 0) return false;
         if (!targetToppings.Contains(servedToppings[0])) return false;
@@ -96,18 +99,17 @@ public class Customer : MonoBehaviour
     }
 
     // ─── Serve ────────────────────────────────────────────────────
-    // quality comes from the oven minigame (0.0 - 1.0)
     public void Serve(bool correct, float quality = 1f)
     {
         if (isServed) return;
         isServed = true;
+        SetHighlight(false);
 
         if (patienceCoroutine != null)
             GameManager.Instance.StopCoroutine(patienceCoroutine);
 
         if (correct)
         {
-            // Base points + patience bonus, scaled by cook quality
             int basePoints = 10 + Mathf.FloorToInt(patience);
             int finalPoints = Mathf.RoundToInt(basePoints * quality);
             GameManager.Instance.AddScore(finalPoints);

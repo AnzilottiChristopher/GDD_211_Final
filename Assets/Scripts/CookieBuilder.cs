@@ -37,6 +37,7 @@ public class CookieBuilder : MonoBehaviour
     private bool isReady = false;
     private bool isBaking = false;
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
+    public float GetCookQuality() => cookQuality;
 
     void Start()
     {
