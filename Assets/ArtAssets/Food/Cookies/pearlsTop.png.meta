@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 8b97c9d92de03436f83d3bb1f4f1ca85
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1274341306551104224
+    second: pearlsTop_0
+  - first:
+      213: -3786067402452061400
+    second: pearlsTop_1
+  - first:
+      213: -1103782174446674326
+    second: pearlsTop_2
+  - first:
+      213: -233840863278389718
+    second: pearlsTop_3
+  - first:
+      213: -4742083751232130535
+    second: pearlsTop_4
+  - first:
+      213: -6701731910955241996
+    second: pearlsTop_5
+  - first:
+      213: -308113055484374505
+    second: pearlsTop_6
+  - first:
+      213: 2135012756597140631
+    second: pearlsTop_7
+  - first:
+      213: -4646787687458926607
+    second: pearlsTop_8
+  - first:
+      213: -8747915301795729951
+    second: pearlsTop_9
+  - first:
+      213: 3955168085894372399
+    second: pearlsTop_10
+  - first:
+      213: -8835422160972615575
+    second: pearlsTop_11
+  - first:
+      213: 5922437325588884228
+    second: pearlsTop_12
+  - first:
+      213: 6408377240321525698
+    second: pearlsTop_13
+  - first:
+      213: 9878258013459982
+    second: pearlsTop_14
+  - first:
+      213: 712099874965592992
+    second: pearlsTop_15
+  - first:
+      213: 1789644433437238024
+    second: pearlsTop_16
+  - first:
+      213: 8767585293324701067
+    second: pearlsTop_17
+  - first:
+      213: -3101339876628184919
+    second: pearlsTop_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pearlsTop_0
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 333
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2f593aaae5fa110800000000000000
+      internalID: 1274341306551104224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_1
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 277
+        width: 75
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823b825c1cf257bc0800000000000000
+      internalID: -3786067402452061400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_2
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 263
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e92bed5f39ea0f0800000000000000
+      internalID: -1103782174446674326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 279
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26225a49fa31ccf0800000000000000
+      internalID: -233840863278389718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_4
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 281
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91238a0f3fbb03eb0800000000000000
+      internalID: -4742083751232130535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_5
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 291
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fdec93955aaef2a0800000000000000
+      internalID: -6701731910955241996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_6
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 310
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7129139fecc59bbf0800000000000000
+      internalID: -308113055484374505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_7
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 291
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c66e35ac611ad10800000000000000
+      internalID: 2135012756597140631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_8
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 215
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff0a5ec73b438fb0800000000000000
+      internalID: -4646787687458926607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_9
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 249
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ede247a169299680800000000000000
+      internalID: -8747915301795729951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_10
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 254
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c12b23b6493e630800000000000000
+      internalID: 3955168085894372399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_11
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 255
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 960fc9e4b56426580800000000000000
+      internalID: -8835422160972615575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_12
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 259
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b6d348e59b03250800000000000000
+      internalID: 5922437325588884228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_13
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 212
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c70014a5212fe850800000000000000
+      internalID: 6408377240321525698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_14
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 185
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0654eb2938132000800000000000000
+      internalID: 9878258013459982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_15
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 187
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab9ceb3013e1e900800000000000000
+      internalID: 712099874965592992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_16
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 154
+        width: 69
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8032849512816d810800000000000000
+      internalID: 1789644433437238024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_17
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 174
+        width: 67
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8dce822f58bca970800000000000000
+      internalID: 8767585293324701067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pearlsTop_18
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 192
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0c2d550d3d5f4d0800000000000000
+      internalID: -3101339876628184919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pearlsTop_0: 1274341306551104224
+      pearlsTop_1: -3786067402452061400
+      pearlsTop_10: 3955168085894372399
+      pearlsTop_11: -8835422160972615575
+      pearlsTop_12: 5922437325588884228
+      pearlsTop_13: 6408377240321525698
+      pearlsTop_14: 9878258013459982
+      pearlsTop_15: 712099874965592992
+      pearlsTop_16: 1789644433437238024
+      pearlsTop_17: 8767585293324701067
+      pearlsTop_18: -3101339876628184919
+      pearlsTop_2: -1103782174446674326
+      pearlsTop_3: -233840863278389718
+      pearlsTop_4: -4742083751232130535
+      pearlsTop_5: -6701731910955241996
+      pearlsTop_6: -308113055484374505
+      pearlsTop_7: 2135012756597140631
+      pearlsTop_8: -4646787687458926607
+      pearlsTop_9: -8747915301795729951
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

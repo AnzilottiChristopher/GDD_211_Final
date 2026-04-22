@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: a20b9e21d8ba44d65933514732298657
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7202868508278765655
+    second: starfishTop_0
+  - first:
+      213: -3148444626316232630
+    second: starfishTop_1
+  - first:
+      213: -665972867980897811
+    second: starfishTop_2
+  - first:
+      213: 5664577170975556894
+    second: starfishTop_3
+  - first:
+      213: 2308551159786562273
+    second: starfishTop_4
+  - first:
+      213: 2651048200583011018
+    second: starfishTop_5
+  - first:
+      213: 7683112782899469901
+    second: starfishTop_6
+  - first:
+      213: 4147213058574582260
+    second: starfishTop_7
+  - first:
+      213: -3357221318451562882
+    second: starfishTop_8
+  - first:
+      213: -7442013224856978225
+    second: starfishTop_9
+  - first:
+      213: 1859258488399942010
+    second: starfishTop_10
+  - first:
+      213: -4340623410868589164
+    second: starfishTop_11
+  - first:
+      213: 70442852165076473
+    second: starfishTop_12
+  - first:
+      213: 2568547438262856872
+    second: starfishTop_13
+  - first:
+      213: -3075190853562985862
+    second: starfishTop_14
+  - first:
+      213: -7363304479402087122
+    second: starfishTop_15
+  - first:
+      213: 1047651986541633091
+    second: starfishTop_16
+  - first:
+      213: -9168338611929836397
+    second: starfishTop_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: starfishTop_0
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 335
+        width: 59
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7423011454a0c90800000000000000
+      internalID: -7202868508278765655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_1
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 303
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48fe652b4a7e44d0800000000000000
+      internalID: -3148444626316232630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_2
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 310
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de153fd743df1c6f0800000000000000
+      internalID: -665972867980897811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_3
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 357
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1509cebcee9c9e40800000000000000
+      internalID: 5664577170975556894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_4
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 327
+        width: 68
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2e4e07c0f990020800000000000000
+      internalID: 2308551159786562273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_5
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 320
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca5036ea4a6ac420800000000000000
+      internalID: 2651048200583011018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 259
+        width: 54
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e5cf18e56ef9a60800000000000000
+      internalID: 7683112782899469901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_7
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 295
+        width: 69
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1033ccd4cdd8930800000000000000
+      internalID: 4147213058574582260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_8
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 231
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7673598ff0c861d0800000000000000
+      internalID: -3357221318451562882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_9
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 202
+        width: 116
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fccf3a6c668a8b890800000000000000
+      internalID: -7442013224856978225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_10
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 241
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7155b29eb96dc910800000000000000
+      internalID: 1859258488399942010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_11
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 233
+        width: 127
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49dee63610203c3c0800000000000000
+      internalID: -4340623410868589164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_12
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 263
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5c34c96634af000800000000000000
+      internalID: 70442852165076473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_13
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 226
+        width: 128
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aca56e494055a320800000000000000
+      internalID: 2568547438262856872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_14
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 268
+        width: 67
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7219d4363ab255d0800000000000000
+      internalID: -3075190853562985862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_15
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 226
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d2234a69940d990800000000000000
+      internalID: -7363304479402087122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_16
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 179
+        width: 105
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34edb0a5ee10a8e00800000000000000
+      internalID: 1047651986541633091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: starfishTop_17
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 227
+        width: 55
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3949c6fbb9483c080800000000000000
+      internalID: -9168338611929836397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      starfishTop_0: -7202868508278765655
+      starfishTop_1: -3148444626316232630
+      starfishTop_10: 1859258488399942010
+      starfishTop_11: -4340623410868589164
+      starfishTop_12: 70442852165076473
+      starfishTop_13: 2568547438262856872
+      starfishTop_14: -3075190853562985862
+      starfishTop_15: -7363304479402087122
+      starfishTop_16: 1047651986541633091
+      starfishTop_17: -9168338611929836397
+      starfishTop_2: -665972867980897811
+      starfishTop_3: 5664577170975556894
+      starfishTop_4: 2308551159786562273
+      starfishTop_5: 2651048200583011018
+      starfishTop_6: 7683112782899469901
+      starfishTop_7: 4147213058574582260
+      starfishTop_8: -3357221318451562882
+      starfishTop_9: -7442013224856978225
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

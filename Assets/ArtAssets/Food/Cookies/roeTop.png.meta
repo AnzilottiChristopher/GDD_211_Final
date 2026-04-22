@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 011a73d9395f54a97aa99a33468b2c6b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8201031768739383795
+    second: roeTop_0
+  - first:
+      213: 2078818618472301355
+    second: roeTop_1
+  - first:
+      213: 2970929974707132005
+    second: roeTop_2
+  - first:
+      213: -8097626309137181801
+    second: roeTop_3
+  - first:
+      213: 4136346148893724646
+    second: roeTop_4
+  - first:
+      213: 6910733054021925610
+    second: roeTop_5
+  - first:
+      213: 7208718995208109838
+    second: roeTop_6
+  - first:
+      213: -6621462426978554035
+    second: roeTop_7
+  - first:
+      213: 8391504422731775453
+    second: roeTop_8
+  - first:
+      213: 4765873789511001540
+    second: roeTop_9
+  - first:
+      213: 4135431900445216643
+    second: roeTop_10
+  - first:
+      213: -4746665705938926633
+    second: roeTop_11
+  - first:
+      213: -6481510905482588983
+    second: roeTop_12
+  - first:
+      213: -8731841977795547643
+    second: roeTop_13
+  - first:
+      213: -7847033734463906630
+    second: roeTop_14
+  - first:
+      213: 1442655298795707386
+    second: roeTop_15
+  - first:
+      213: -7793683703149246487
+    second: roeTop_16
+  - first:
+      213: 592482638820483050
+    second: roeTop_17
+  - first:
+      213: 6206457630686899606
+    second: roeTop_18
+  - first:
+      213: 5013146877697636358
+    second: roeTop_19
+  - first:
+      213: 8861658060725041375
+    second: roeTop_20
+  - first:
+      213: 5063176768123068538
+    second: roeTop_21
+  - first:
+      213: 2440117798426181291
+    second: roeTop_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: roeTop_0
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 332
+        width: 67
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d067898ae05103e80800000000000000
+      internalID: -8201031768739383795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_1
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 338
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23828af48279dc10800000000000000
+      internalID: 2078818618472301355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_2
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 334
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5669af2421dda3920800000000000000
+      internalID: 2970929974707132005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 338
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793550066c37f9f80800000000000000
+      internalID: -8097626309137181801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_4
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 373
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef8dd838e0476930800000000000000
+      internalID: 4136346148893724646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_5
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 331
+        width: 62
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeaf686191bd7ef50800000000000000
+      internalID: 6910733054021925610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_6
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 352
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f7df29bb38a0460800000000000000
+      internalID: 7208718995208109838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_7
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 371
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4fe8523107db14a0800000000000000
+      internalID: -6621462426978554035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_8
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 331
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dddfb08ffcc947470800000000000000
+      internalID: 8391504422731775453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_9
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 339
+        width: 60
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5e52cf5f8c32240800000000000000
+      internalID: 4765873789511001540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_10
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 321
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f0bda2761046930800000000000000
+      internalID: 4135431900445216643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_11
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 335
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d34bf970b4702eb0800000000000000
+      internalID: -4746665705938926633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_12
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 315
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ccc3e60c2c0d06a0800000000000000
+      internalID: -6481510905482588983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_13
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 311
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ee6a60cf342d680800000000000000
+      internalID: -8731841977795547643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_14
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 327
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc95c4d46cb91390800000000000000
+      internalID: -7847033734463906630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_15
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 318
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afb9d0ac957550410800000000000000
+      internalID: 1442655298795707386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_16
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 298
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7c906f6f547d390800000000000000
+      internalID: -7793683703149246487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_17
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 294
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef1b7622dbe83800800000000000000
+      internalID: 592482638820483050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_18
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 290
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69dea96f454c12650800000000000000
+      internalID: 6206457630686899606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_19
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 288
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608b6044686429540800000000000000
+      internalID: 5013146877697636358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_20
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 302
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd83e7e1e0feafa70800000000000000
+      internalID: 8861658060725041375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_21
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 275
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a706cfad174044640800000000000000
+      internalID: 5063176768123068538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roeTop_22
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 286
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baefc49953a0dd120800000000000000
+      internalID: 2440117798426181291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      roeTop_0: -8201031768739383795
+      roeTop_1: 2078818618472301355
+      roeTop_10: 4135431900445216643
+      roeTop_11: -4746665705938926633
+      roeTop_12: -6481510905482588983
+      roeTop_13: -8731841977795547643
+      roeTop_14: -7847033734463906630
+      roeTop_15: 1442655298795707386
+      roeTop_16: -7793683703149246487
+      roeTop_17: 592482638820483050
+      roeTop_18: 6206457630686899606
+      roeTop_19: 5013146877697636358
+      roeTop_2: 2970929974707132005
+      roeTop_20: 8861658060725041375
+      roeTop_21: 5063176768123068538
+      roeTop_22: 2440117798426181291
+      roeTop_3: -8097626309137181801
+      roeTop_4: 4136346148893724646
+      roeTop_5: 6910733054021925610
+      roeTop_6: 7208718995208109838
+      roeTop_7: -6621462426978554035
+      roeTop_8: 8391504422731775453
+      roeTop_9: 4765873789511001540
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
