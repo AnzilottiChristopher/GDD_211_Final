@@ -23,26 +23,33 @@ public class CookieBuilder : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private Button bakeButton;
-    [SerializeField] private Button serveButton;
     [SerializeField] private Button trashButton;
 
     [Header("Feedback")]
     [SerializeField] private TextMeshProUGUI statusText;
 
+    [Header("Build Panel")]
+    [SerializeField] private GameObject ingredientPanel;
+    [SerializeField] private Image doughDisplay;
+    [SerializeField] private TextMeshProUGUI toppingLabel;
+    [SerializeField] private GameObject cookieItem;
+
     private bool isReady = false;
     private bool isBaking = false;
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
-
+    public float GetCookQuality() => cookQuality;
 
     void Start()
     {
         SetTrashButtonActive(false);
-        SetServeButtonActive(false);
         SetBakeButtonActive(true);
         HideAllMinigamePanels();
+        ingredientPanel.SetActive(true);
+        doughDisplay.gameObject.SetActive(false);
+        toppingLabel.gameObject.SetActive(false);
+        cookieItem.SetActive(false);
         UpdateStatus("Select a dough and topping, then hit Bake!");
 
-        // Subscribe to minigame completion events
         if (doughMinigame != null)
             doughMinigame.OnComplete += OnDoughMinigameComplete;
         if (ovenMinigame != null)
@@ -61,17 +68,21 @@ public class CookieBuilder : MonoBehaviour
             toppingMinigame.OnComplete -= OnToppingMinigameComplete;
     }
 
-    // ─── Step 1: Dough Selection (just stores value) ──────────────
-    public void SelectDough(int newDough)
+    // ─── Step 1: Dough Selection ───────────────────────────────────
+    public void SelectDough(int newDough, Button doughButton)
     {
         if (isBaking || isReady) return;
         dough = newDough;
         string doughName = DoughNames[newDough - 1];
         Debug.Log("Selected dough: " + doughName);
         UpdateStatus(doughName + " dough selected. Now pick a topping!");
+
+        // show dough image in build panel
+        doughDisplay.sprite = doughButton.targetGraphic.GetComponent<Image>().sprite;
+        doughDisplay.gameObject.SetActive(true);
     }
 
-    // ─── Step 2: Topping Selection (just stores value) ────────────
+    // ─── Step 2: Topping Selection ────────────────────────────────
     public void AddTopping(string topping)
     {
         if (isBaking || isReady) return;
@@ -79,9 +90,11 @@ public class CookieBuilder : MonoBehaviour
         toppings.Add(topping);
         Debug.Log("Added topping: " + topping);
         UpdateStatus("Topping: " + topping + ". Ready to bake!");
+        toppingLabel.text = topping;
+        toppingLabel.gameObject.SetActive(true);
     }
 
-    // ─── Step 3: Bake Button → triggers minigame chain ────────────
+    // ─── Step 3: Bake ─────────────────────────────────────────────
     public void StartBake()
     {
         if (isBaking || isReady) return;
@@ -101,7 +114,6 @@ public class CookieBuilder : MonoBehaviour
         SetBakeButtonActive(false);
         UpdateStatus("Mix the dough!");
 
-        // Start with dough minigame
         ShowPanel(doughMinigamePanel);
         if (doughMinigame != null)
             doughMinigame.StartMinigame();
@@ -130,40 +142,22 @@ public class CookieBuilder : MonoBehaviour
             toppingMinigame.StartMinigame();
     }
 
-    // ─── Topping Minigame Complete → Ready to Serve ───────────────
+    // ─── Topping Minigame Complete → Cookie Ready ─────────────────
     private void OnToppingMinigameComplete()
     {
         HideAllMinigamePanels();
         isBaking = false;
         isReady = true;
-        UpdateStatus("Cookie ready! Click a customer then hit Serve.");
-        SetServeButtonActive(true);
+
+        // TODO Make it so it's the image and don't change the children
+        doughDisplay.transform.SetParent(cookieItem.transform, false);
+        toppingLabel.transform.SetParent(cookieItem.transform, false);
+
+        //doughDisplay.gameObject.SetActive(false);
+        //toppingLabel.gameObject.SetActive(false);
+        cookieItem.SetActive(true);
         SetTrashButtonActive(true);
-    }
-
-    // ─── Serving ──────────────────────────────────────────────────
-    public void Serve()
-    {
-        if (!isReady)
-        {
-            UpdateStatus("Finish making the cookie first!");
-            return;
-        }
-
-        Customer target = GameManager.Instance.GetSelectedCustomer();
-        if (target == null)
-        {
-            UpdateStatus("Click a customer first!");
-            return;
-        }
-
-        Debug.Log("Serving — dough: " + dough + " topping: " + (toppings.Count > 0 ? toppings[0] : "NONE"));
-
-        bool correct = target.CheckOrder(dough, toppings);
-        target.Serve(correct, cookQuality);
-
-        UpdateStatus(correct ? "Perfect order!" : "Wrong order...");
-        ResetCookie();
+        UpdateStatus("Cookie ready! Drag it to your inventory.");
     }
 
     // ─── Reset ────────────────────────────────────────────────────
@@ -175,9 +169,18 @@ public class CookieBuilder : MonoBehaviour
         isReady = false;
         isBaking = false;
         HideAllMinigamePanels();
+
+        //TODO remove when have actual asset
+        doughDisplay.transform.SetParent(ingredientPanel.transform, false);
+        toppingLabel.transform.SetParent(ingredientPanel.transform, false);
+
         SetBakeButtonActive(true);
-        SetServeButtonActive(false);
         SetTrashButtonActive(false);
+        cookieItem.SetActive(false);
+        doughDisplay.sprite = null;
+        doughDisplay.gameObject.SetActive(false);
+        toppingLabel.text = "";
+        toppingLabel.gameObject.SetActive(false);
         UpdateStatus("Select a dough and topping, then hit Bake!");
     }
 
@@ -202,19 +205,14 @@ public class CookieBuilder : MonoBehaviour
         if (bakeButton != null) bakeButton.interactable = active;
     }
 
-    private void SetServeButtonActive(bool active)
+    private void SetTrashButtonActive(bool active)
     {
-        if (serveButton != null) serveButton.interactable = active;
+        if (trashButton != null) trashButton.interactable = active;
     }
 
     private void UpdateStatus(string msg)
     {
         Debug.Log("[CookieBuilder] " + msg);
         if (statusText != null) statusText.text = msg;
-    }
-    
-    private void SetTrashButtonActive(bool active)
-    {
-        if(trashButton != null) trashButton.interactable = active;
     }
 }
