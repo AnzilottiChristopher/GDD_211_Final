@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &18911319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -208,6 +208,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   dragController: {fileID: 1291023008}
+--- !u!114 &45027445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 188079418944378782, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &81527403
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &479170762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -609,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &768587820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -808,6 +819,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &877297954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9068057040205869478, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &966369031 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9161849190146015753, guid: e3891ba1e1e107b46abc2880ad00c88a, type: 3}
@@ -835,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1063342497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -926,7 +942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1287025035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1053,7 +1069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1311404956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1216,6 +1232,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1579810666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 169370557340625986, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1622203452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1967751256949847687, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
@@ -1242,6 +1263,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693362a1e15848344a1b9092c393119c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Doughminigame
+--- !u!114 &1869608364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5692209305972897472, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1954540656 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7745848001855963158, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
@@ -1276,7 +1308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1982870530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1484,9 +1516,21 @@ PrefabInstance:
       value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 1763830813069214710, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763830813069214710, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 219848887}
+      objectReference: {fileID: 224357789282951573}
+    - target: {fileID: 1763830813069214710, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763830813069214710, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoughButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1874905613900936200, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_text
       value: 'Kelp
@@ -1499,7 +1543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967751256949847687, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2074802560008997634, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
@@ -1526,9 +1570,21 @@ PrefabInstance:
       value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 2074802560008997634, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074802560008997634, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 219848887}
+      objectReference: {fileID: 224357789282951575}
+    - target: {fileID: 2074802560008997634, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074802560008997634, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoughButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2265003642917834392, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 1
@@ -1554,9 +1610,21 @@ PrefabInstance:
       value: 0.57254905
       objectReference: {fileID: 0}
     - target: {fileID: 2265003642917834392, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265003642917834392, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 219848887}
+      objectReference: {fileID: 224357789282951572}
+    - target: {fileID: 2265003642917834392, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265003642917834392, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoughButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2494406614803275255, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2078,9 +2146,21 @@ PrefabInstance:
       value: 0.5707547
       objectReference: {fileID: 0}
     - target: {fileID: 7076231562882346737, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076231562882346737, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 219848887}
+      objectReference: {fileID: 224357789282951574}
+    - target: {fileID: 7076231562882346737, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076231562882346737, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DoughButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7173080840631221336, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2121,6 +2201,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7790191194905522403, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: dragController
+      value: 
+      objectReference: {fileID: 1291023008}
     - target: {fileID: 7794827481046082175, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -2340,8 +2424,96 @@ PrefabInstance:
     - {fileID: 2678135075948665157, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
     - {fileID: 4966265500863153319, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5971020451742639948, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 224357789282951575}
+    - targetCorrespondingSourceObject: {fileID: 308204685682284570, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 224357789282951574}
+    - targetCorrespondingSourceObject: {fileID: 2018233441025458079, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 224357789282951573}
+    - targetCorrespondingSourceObject: {fileID: 34508969701767475, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 224357789282951572}
   m_SourcePrefab: {fileID: 100100000, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+--- !u!1 &224357789282951568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 34508969701767475, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &224357789282951569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2018233441025458079, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &224357789282951570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 308204685682284570, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &224357789282951571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5971020451742639948, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &224357789282951572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224357789282951568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0251949aac834d348a58874d0f6c8819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoughButton
+  cookieBuilder: {fileID: 219848887}
+  doughIndex: 4
+--- !u!114 &224357789282951573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224357789282951569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0251949aac834d348a58874d0f6c8819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoughButton
+  cookieBuilder: {fileID: 219848887}
+  doughIndex: 3
+--- !u!114 &224357789282951574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224357789282951570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0251949aac834d348a58874d0f6c8819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoughButton
+  cookieBuilder: {fileID: 219848887}
+  doughIndex: 2
+--- !u!114 &224357789282951575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224357789282951571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0251949aac834d348a58874d0f6c8819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoughButton
+  cookieBuilder: {fileID: 219848887}
+  doughIndex: 1
 --- !u!1001 &465373606605450153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2846,7 +3018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4176804724673969710, guid: e3891ba1e1e107b46abc2880ad00c88a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6912704365389829583, guid: e3891ba1e1e107b46abc2880ad00c88a, type: 3}
       propertyPath: m_Transition
@@ -3128,6 +3300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 528598958}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: cookieItem
+      value: 
+      objectReference: {fileID: 1579810666}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: serveButton
       value: 
       objectReference: {fileID: 5386622372602016679}
@@ -3136,9 +3312,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 599845447}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: doughDisplay
+      value: 
+      objectReference: {fileID: 45027445}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: ovenMinigame
       value: 
       objectReference: {fileID: 1954540660}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: toppingLabel
+      value: 
+      objectReference: {fileID: 1869608364}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: bakeTimerText
       value: 
@@ -3147,6 +3331,10 @@ PrefabInstance:
       propertyPath: doughMinigame
       value: 
       objectReference: {fileID: 1759890357}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: ingredientPanel
+      value: 
+      objectReference: {fileID: 877297954}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: toppingMinigame
       value: 
