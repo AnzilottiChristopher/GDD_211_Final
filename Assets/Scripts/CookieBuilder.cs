@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 
 public class CookieBuilder : MonoBehaviour
 {
@@ -33,6 +34,13 @@ public class CookieBuilder : MonoBehaviour
     [SerializeField] private Image doughDisplay;
     [SerializeField] private TextMeshProUGUI toppingLabel;
     [SerializeField] private GameObject cookieItem;
+    [SerializeField] private Sprite[] doughSprites;
+    [SerializeField] private Sprite[] finishedCookieSprites;
+    [SerializeField] private Sprite[] toppingSprites;
+    [SerializeField] private Image cookieDisplay;
+    [SerializeField] private Image toppingDisplay;
+
+    private static readonly string[] PossibleToppings = { "Barnacles", "Pearls", "Starfish Sprinkles" };
 
     private bool isReady = false;
     private bool isBaking = false;
@@ -78,7 +86,7 @@ public class CookieBuilder : MonoBehaviour
         UpdateStatus(doughName + " dough selected. Now pick a topping!");
 
         // show dough image in build panel
-        doughDisplay.sprite = doughButton.targetGraphic.GetComponent<Image>().sprite;
+        doughDisplay.sprite = doughSprites[newDough - 1];
         doughDisplay.gameObject.SetActive(true);
     }
 
@@ -148,14 +156,23 @@ public class CookieBuilder : MonoBehaviour
         HideAllMinigamePanels();
         isBaking = false;
         isReady = true;
-        Debug.Log(isReady);
+        //Debug.Log(isReady);
 
-        // TODO Make it so it's the image and don't change the children
-        doughDisplay.transform.SetParent(cookieItem.transform, false);
-        toppingLabel.transform.SetParent(cookieItem.transform, false);
+        
+        // doughDisplay.transform.SetParent(cookieItem.transform, false);
+        // toppingLabel.transform.SetParent(cookieItem.transform, false);
+        cookieDisplay.sprite = finishedCookieSprites[dough - 1];
+        cookieDisplay.gameObject.SetActive(true);
 
-        //doughDisplay.gameObject.SetActive(false);
-        //toppingLabel.gameObject.SetActive(false);
+        int toppingIndex = System.Array.IndexOf(PossibleToppings, toppings[0]);
+        if(toppingIndex >= 0) {
+            toppingDisplay.sprite = toppingSprites[toppingIndex];
+            toppingDisplay.gameObject.SetActive(true);
+        }
+
+
+        doughDisplay.gameObject.SetActive(false);
+        toppingLabel.gameObject.SetActive(false);
         cookieItem.SetActive(true);
         SetTrashButtonActive(true);
         UpdateStatus("Cookie ready! Drag it to your inventory.");
@@ -173,11 +190,15 @@ public class CookieBuilder : MonoBehaviour
         HideAllMinigamePanels();
 
         //TODO remove when have actual asset
-        doughDisplay.transform.SetParent(ingredientPanel.transform, false);
-        toppingLabel.transform.SetParent(ingredientPanel.transform, false);
+        // doughDisplay.transform.SetParent(ingredientPanel.transform, false);
+        // toppingLabel.transform.SetParent(ingredientPanel.transform, false);
 
         SetBakeButtonActive(true);
         SetTrashButtonActive(false);
+        cookieDisplay.gameObject.SetActive(false);
+        toppingDisplay.gameObject.SetActive(false);
+        cookieDisplay.sprite = null;
+        toppingDisplay.sprite = null;
         cookieItem.SetActive(false);
         doughDisplay.sprite = null;
         doughDisplay.gameObject.SetActive(false);

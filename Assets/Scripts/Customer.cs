@@ -21,7 +21,7 @@ public class Customer : MonoBehaviour
     [Header("Highlight")]
     [SerializeField] private Image highlightImage;
 
-    private static readonly string[] PossibleToppings = { "Krill", "Seaweed", "Starfish Sprinkles" };
+    private static readonly string[] PossibleToppings = { "Barnacles", "Pearls", "Starfish Sprinkles" };
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
 
     public int SlotIndex { get; private set; }
