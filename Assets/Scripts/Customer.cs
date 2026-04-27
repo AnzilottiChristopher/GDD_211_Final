@@ -42,7 +42,9 @@ public class Customer : MonoBehaviour
         // pick random character sprite
         if (characterImage != null)
         {
-            characterImage.sprite = GameManager.Instance.GetRandomCustomerSprite();
+            Sprite s = GameManager.Instance.GetRandomCustomerSprite();
+            Debug.Log("Setting character sprite to: " + s.name);
+            characterImage.sprite = s;
         }
 
         GenerateOrder();
