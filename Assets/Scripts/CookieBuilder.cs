@@ -32,11 +32,12 @@ public class CookieBuilder : MonoBehaviour
     [Header("Build Panel")]
     [SerializeField] private GameObject ingredientPanel;
     [SerializeField] private Image doughDisplay;
-    [SerializeField] private TextMeshProUGUI toppingLabel;
+    [SerializeField] private Image toppingPreview;
     [SerializeField] private GameObject cookieItem;
     [SerializeField] private Sprite[] doughSprites;
     [SerializeField] private Sprite[] finishedCookieSprites;
     [SerializeField] private Sprite[] toppingSprites;
+    [SerializeField] private Sprite[] toppingPreviewSprites;
     [SerializeField] private Image cookieDisplay;
     [SerializeField] private Image toppingDisplay;
 
@@ -54,7 +55,7 @@ public class CookieBuilder : MonoBehaviour
         HideAllMinigamePanels();
         ingredientPanel.SetActive(true);
         doughDisplay.gameObject.SetActive(false);
-        toppingLabel.gameObject.SetActive(false);
+        toppingPreview.gameObject.SetActive(false);
         cookieItem.SetActive(false);
         UpdateStatus("Select a dough and topping, then hit Bake!");
 
@@ -98,8 +99,13 @@ public class CookieBuilder : MonoBehaviour
         toppings.Add(topping);
         Debug.Log("Added topping: " + topping);
         UpdateStatus("Topping: " + topping + ". Ready to bake!");
-        toppingLabel.text = topping;
-        toppingLabel.gameObject.SetActive(true);
+        
+        int toppingIndex = System.Array.IndexOf(PossibleToppings, topping);
+        if(toppingIndex >= 0)
+        {
+            toppingPreview.sprite = toppingPreviewSprites[toppingIndex];
+            toppingPreview.gameObject.SetActive(true);
+        }
     }
 
     // ─── Step 3: Bake ─────────────────────────────────────────────
@@ -169,10 +175,11 @@ public class CookieBuilder : MonoBehaviour
             toppingDisplay.sprite = toppingSprites[toppingIndex];
             toppingDisplay.gameObject.SetActive(true);
         }
+        
 
 
         doughDisplay.gameObject.SetActive(false);
-        toppingLabel.gameObject.SetActive(false);
+        toppingPreview.gameObject.SetActive(false);
         cookieItem.SetActive(true);
         SetTrashButtonActive(true);
         UpdateStatus("Cookie ready! Drag it to your inventory.");
@@ -193,6 +200,8 @@ public class CookieBuilder : MonoBehaviour
         // doughDisplay.transform.SetParent(ingredientPanel.transform, false);
         // toppingLabel.transform.SetParent(ingredientPanel.transform, false);
 
+        cookieItem.transform.SetParent(ingredientPanel.transform, false);
+
         SetBakeButtonActive(true);
         SetTrashButtonActive(false);
         cookieDisplay.gameObject.SetActive(false);
@@ -202,8 +211,8 @@ public class CookieBuilder : MonoBehaviour
         cookieItem.SetActive(false);
         doughDisplay.sprite = null;
         doughDisplay.gameObject.SetActive(false);
-        toppingLabel.text = "";
-        toppingLabel.gameObject.SetActive(false);
+        toppingPreview.sprite = null;
+        toppingPreview.gameObject.SetActive(false);
         UpdateStatus("Select a dough and topping, then hit Bake!");
     }
 

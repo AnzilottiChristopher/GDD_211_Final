@@ -20,6 +20,16 @@ public class GameManager : MonoBehaviour
 
     private Customer selectedCustomer = null;
 
+    [Header("Shared Sprites")]
+    [SerializeField] private Sprite[] customerSprites;      // 2 character sprites
+    [SerializeField] private Sprite[] doughSprites;         // 4 dough sprites
+    [SerializeField] private Sprite[] toppingSprites;       // 3 cooked topping sprites
+
+    public Sprite GetRandomCustomerSprite() => customerSprites[Random.Range(0, customerSprites.Length)];
+    public Sprite GetDoughSprite(int doughIndex) => doughSprites[doughIndex - 1];
+    public Sprite GetToppingSprite(int toppingIndex) => toppingSprites[toppingIndex];
+
+
     [Header("Day Timer")]
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float dayDuration = 120;
