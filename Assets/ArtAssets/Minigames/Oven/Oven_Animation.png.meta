@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ccbe825b15c9427a8573cb9fd9273c9
+guid: f30ac079747fc430d914a3479ce937fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7582498198547129404
-    second: Mixing_Bowl 4_0
+      213: 3624993046569786192
+    second: Oven_Animation_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mixing_Bowl 4_0
+      name: Oven_Animation_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 22
-        width: 1778
-        height: 1188
+        x: 13
+        y: 7
+        width: 1484
+        height: 1497
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4cb1f8def0e85c690800000000000000
-      internalID: -7582498198547129404
+      spriteID: 05b9d0648ff8e4230800000000000000
+      internalID: 3624993046569786192
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mixing_Bowl 4_0: -7582498198547129404
+      Oven_Animation_0: 3624993046569786192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
