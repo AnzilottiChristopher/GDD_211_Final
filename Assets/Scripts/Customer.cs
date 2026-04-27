@@ -12,7 +12,8 @@ public class Customer : MonoBehaviour
     private float patience;
 
     [Header("Order Display")]
-    [SerializeField] private TextMeshProUGUI orderText;
+    [SerializeField] private Image doughOrderImage;
+    [SerializeField] private Image toppingOrderImage;
 
     [Header("Order Data")]
     [SerializeField] private int targetDough;
@@ -21,7 +22,10 @@ public class Customer : MonoBehaviour
     [Header("Highlight")]
     [SerializeField] private Image highlightImage;
 
-    private static readonly string[] PossibleToppings = { "Krill", "Seaweed", "Starfish Sprinkles" };
+    [Header("Character")]
+    [SerializeField] private Image characterImage;
+
+    private static readonly string[] PossibleToppings = { "Barnacles", "Pearls", "Starfish Sprinkles" };
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
 
     public int SlotIndex { get; private set; }
@@ -29,26 +33,30 @@ public class Customer : MonoBehaviour
     private bool isServed = false;
     private Coroutine patienceCoroutine;
 
-    // ─── Init ─────────────────────────────────────────────────────
     public void Init(int slotIndex)
     {
         SlotIndex = slotIndex;
         patience = maxPatience;
         SetHighlight(false);
+
+        // pick random character sprite
+        if (characterImage != null)
+        {
+            Sprite s = GameManager.Instance.GetRandomCustomerSprite();
+            Debug.Log("Setting character sprite to: " + s.name);
+            characterImage.sprite = s;
+        }
+
         GenerateOrder();
         patienceCoroutine = GameManager.Instance.RunCoroutine(PatienceRoutine());
     }
 
-    // ─── Highlight ────────────────────────────────────────────────
     public void SetHighlight(bool on)
     {
-        Debug.Log($"SetHighlight({on}) — image is {(highlightImage == null ? "NULL" : "assigned")}");
-
         if (highlightImage != null)
             highlightImage.enabled = on;
     }
 
-    // ─── Patience Coroutine ───────────────────────────────────────
     private IEnumerator PatienceRoutine()
     {
         while (patience > 0f && !isServed)
@@ -65,7 +73,6 @@ public class Customer : MonoBehaviour
         }
     }
 
-    // ─── Order Generation ─────────────────────────────────────────
     private void GenerateOrder()
     {
         targetToppings.Clear();
@@ -76,10 +83,14 @@ public class Customer : MonoBehaviour
 
     private void UpdateOrderUI()
     {
-        if (orderText != null)
+        if (doughOrderImage != null)
+            doughOrderImage.sprite = GameManager.Instance.GetDoughSprite(targetDough);
+
+        if (toppingOrderImage != null)
         {
-            string doughName = DoughNames[targetDough - 1];
-            orderText.text = "Dough: " + doughName + "\nTopping: " + targetToppings[0];
+            int toppingIndex = System.Array.IndexOf(PossibleToppings, targetToppings[0]);
+            if (toppingIndex >= 0)
+                toppingOrderImage.sprite = GameManager.Instance.GetToppingSprite(toppingIndex);
         }
     }
 
@@ -89,7 +100,6 @@ public class Customer : MonoBehaviour
             patienceText.text = Mathf.CeilToInt(patience) + "s";
     }
 
-    // ─── Order Checking ───────────────────────────────────────────
     public bool CheckOrder(int servedDough, List<string> servedToppings)
     {
         if (servedDough != targetDough) return false;
@@ -98,7 +108,6 @@ public class Customer : MonoBehaviour
         return true;
     }
 
-    // ─── Serve ────────────────────────────────────────────────────
     public void Serve(bool correct, float quality = 1f)
     {
         if (isServed) return;
@@ -123,7 +132,6 @@ public class Customer : MonoBehaviour
         GameManager.Instance.ReleaseSlot(SlotIndex);
     }
 
-    // ─── Patience Expired ─────────────────────────────────────────
     private void OnPatienceExpired()
     {
         if (isServed) return;
