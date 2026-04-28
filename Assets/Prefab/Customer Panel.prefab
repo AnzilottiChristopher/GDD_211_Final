@@ -275,7 +275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3899080677339051355, guid: 2023fc2d0ee6d4cb6b18d6fb818c9912, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -642,8 +642,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9326782, y: 4}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 12.4029, y: 4}
+  m_SizeDelta: {x: 151.0269, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1619305778194301008
 CanvasRenderer:
@@ -673,7 +673,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money: '
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 312887e95e46f47e78b1a859c512bdae, type: 2}
   m_sharedMaterial: {fileID: -4618905412479515296, guid: 312887e95e46f47e78b1a859c512bdae, type: 2}
@@ -700,7 +702,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 500
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

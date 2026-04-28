@@ -1104,7 +1104,7 @@ PrefabInstance:
     - target: {fileID: 414625385875677852, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6222569911704133759, guid: 1d814a55b3e5f4afa94d681fb5c10796, type: 3}
+      objectReference: {fileID: 6532072857608925974, guid: 87e9c1796734941908fc05e9c70dde47, type: 3}
     - target: {fileID: 631380241525218771, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1279,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2087715106825503877, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Name
-      value: Barnacles
+      value: Algae Frosting
       objectReference: {fileID: 0}
     - target: {fileID: 2265003642917834392, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
@@ -1494,10 +1494,14 @@ PrefabInstance:
     - target: {fileID: 3661551234169054486, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6450837895825594904, guid: 5070d05d23eaa40368d12b833ef9f0b3, type: 3}
+      objectReference: {fileID: -7799618712664010374, guid: 76e08b4693c264106b99314eb6e7ab92, type: 3}
     - target: {fileID: 4522641187793640682, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_text
-      value: 
+      value: Roe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522641187793640682, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_fontSize
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4696079501382416240, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -1711,7 +1715,7 @@ PrefabInstance:
       objectReference: {fileID: 8554437814181753563, guid: a485a0b9bed154f848d2e79216fe179e, type: 3}
     - target: {fileID: 5705715559371754619, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Name
-      value: Pearls
+      value: Roe
       objectReference: {fileID: 0}
     - target: {fileID: 5872195932555110004, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Type
@@ -2100,7 +2104,7 @@ PrefabInstance:
     - target: {fileID: 8609048766895628005, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4346244404228752641, guid: 661167a78e3d0464d8b5c40c6659f63c, type: 3}
+      objectReference: {fileID: 21300000, guid: d196e780e9dc94ae2b0f95d4a1828325, type: 3}
     - target: {fileID: 8631771909392918723, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2114,6 +2118,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8631771909392918723, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.109087996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631771909392918723, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.109087996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631771909392918723, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.109087996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631771909392918723, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000023418006
       objectReference: {fileID: 0}
@@ -2123,7 +2139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980187722612701560, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_text
-      value: 
+      value: Algae
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980187722612701560, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_fontSize
+      value: 349.8
       objectReference: {fileID: 0}
     - target: {fileID: 9160947951418910035, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2132,6 +2152,18 @@ PrefabInstance:
     - target: {fileID: 9160947951418910035, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221046066548272395, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0605664
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221046066548272395, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0605664
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221046066548272395, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0605664
       objectReference: {fileID: 0}
     - target: {fileID: 9221046066548272395, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2538,11 +2570,11 @@ PrefabInstance:
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: 'toppingSprites.Array.data[0]'
       value: 
-      objectReference: {fileID: -6222569911704133759, guid: 1d814a55b3e5f4afa94d681fb5c10796, type: 3}
+      objectReference: {fileID: -6263423412507183291, guid: 8bc7306a4f70844108d6e3ef2700e48c, type: 3}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: 'toppingSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 6450837895825594904, guid: 5070d05d23eaa40368d12b833ef9f0b3, type: 3}
+      objectReference: {fileID: 21300000, guid: 011a73d9395f54a97aa99a33468b2c6b, type: 3}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: 'toppingSprites.Array.data[2]'
       value: 
@@ -2631,7 +2663,7 @@ PrefabInstance:
     - target: {fileID: 577781185986016663, guid: e3891ba1e1e107b46abc2880ad00c88a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4346244404228752641, guid: 661167a78e3d0464d8b5c40c6659f63c, type: 3}
+      objectReference: {fileID: 21300000, guid: d196e780e9dc94ae2b0f95d4a1828325, type: 3}
     - target: {fileID: 577781185986016663, guid: e3891ba1e1e107b46abc2880ad00c88a, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -3273,15 +3305,15 @@ PrefabInstance:
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: 'toppingSprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 21300000, guid: c00efdb997ec54b97ba4c46bf8a0c823, type: 3}
+      objectReference: {fileID: 6532072857608925974, guid: 87e9c1796734941908fc05e9c70dde47, type: 3}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: 'toppingSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: 8b97c9d92de03436f83d3bb1f4f1ca85, type: 3}
+      objectReference: {fileID: -7799618712664010374, guid: 76e08b4693c264106b99314eb6e7ab92, type: 3}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: 'toppingSprites.Array.data[2]'
       value: 
-      objectReference: {fileID: 21300000, guid: a20b9e21d8ba44d65933514732298657, type: 3}
+      objectReference: {fileID: -3751716439690498231, guid: d3a5d0a5c4f724143a953d5b56e9b0de, type: 3}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: finishedCookieSprites.Array.size
       value: 4
