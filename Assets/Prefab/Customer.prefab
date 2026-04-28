@@ -164,14 +164,14 @@ RectTransform:
   m_GameObject: {fileID: 1831828875806929761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.90842, y: 3.90842, z: 2.6954}
+  m_LocalScale: {x: 4.960931, y: 4.960931, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3436205270491559973}
+  m_Father: {fileID: 2382341610358202828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 907, y: 992}
+  m_AnchoredPosition: {x: 379, y: 617}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4524453815091235312
@@ -229,8 +229,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.2
-  m_fontSizeBase: 67.2
+  m_fontSize: 50.75
+  m_fontSizeBase: 50.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -397,6 +397,7 @@ RectTransform:
   m_Children:
   - {fileID: 7193642345220884563}
   - {fileID: 3247770702789419766}
+  - {fileID: 8614211898093094941}
   m_Father: {fileID: 3436205270491559973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -473,7 +474,6 @@ RectTransform:
   m_LocalScale: {x: 0.262872, y: 0.262872, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8614211898093094941}
   - {fileID: 2831569195740509145}
   - {fileID: 1390569248084421186}
   - {fileID: 1334477867348838124}
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   patienceText: {fileID: 8049313014598106167}
-  maxPatience: 35
+  maxPatience: 45
   doughOrderImage: {fileID: 5992463818478584817}
   toppingOrderImage: {fileID: 7680580428146462722}
   targetDough: 0
