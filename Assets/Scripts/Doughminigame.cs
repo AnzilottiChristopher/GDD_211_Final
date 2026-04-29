@@ -39,7 +39,7 @@ public class Doughminigame : MonoBehaviour
 
         if(instructionText != null)
         {
-            instructionText.text = "Spin the dough! Move mouse clockwise in circles";
+            instructionText.text = "Spin the dough! Move mouse COUNTER-CLOCKWISE in circles";
         }
     }
 
@@ -50,7 +50,7 @@ public class Doughminigame : MonoBehaviour
         float currentAngle = GetMouseAngle();
         float delta = Mathf.DeltaAngle(previousAngle, currentAngle);
 
-        if(delta < -angleThreshold)
+        if(delta > angleThreshold)
         {
             totalAngle += Mathf.Abs(delta);
             UpdateProgressBar();
