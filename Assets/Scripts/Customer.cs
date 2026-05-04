@@ -25,6 +25,9 @@ public class Customer : MonoBehaviour
     [Header("Character")]
     [SerializeField] private Image characterImage;
 
+    [Header("Clothesline")]
+    [SerializeField] private Clothesline clothesline;
+
     private static readonly string[] PossibleToppings = { "Barnacles", "Pearls", "Starfish Sprinkles" };
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
 
@@ -39,7 +42,6 @@ public class Customer : MonoBehaviour
         patience = maxPatience;
         SetHighlight(false);
 
-        // pick random character sprite
         if (characterImage != null)
         {
             Sprite s = GameManager.Instance.GetRandomCustomerSprite();
@@ -79,6 +81,12 @@ public class Customer : MonoBehaviour
         targetDough = Random.Range(1, 5);
         targetToppings.Add(PossibleToppings[Random.Range(0, PossibleToppings.Length)]);
         UpdateOrderUI();
+
+        // Add a ticket to the clothesline for this order
+        if (clothesline != null)
+            clothesline.AddTicket(SlotIndex, targetDough, targetToppings[0]);
+        else
+            Debug.LogWarning("[Customer] No Clothesline reference assigned!");
     }
 
     private void UpdateOrderUI()
@@ -117,6 +125,10 @@ public class Customer : MonoBehaviour
         if (patienceCoroutine != null)
             GameManager.Instance.StopCoroutine(patienceCoroutine);
 
+        // Remove the ticket from the clothesline
+        if (clothesline != null)
+            clothesline.RemoveTicket(SlotIndex);
+
         if (correct)
         {
             int basePoints = 10 + Mathf.FloorToInt(patience);
@@ -139,6 +151,10 @@ public class Customer : MonoBehaviour
 
         if (patienceCoroutine != null)
             GameManager.Instance.StopCoroutine(patienceCoroutine);
+
+        // Remove the ticket when customer leaves
+        if (clothesline != null)
+            clothesline.RemoveTicket(SlotIndex);
 
         Debug.Log("Customer left — patience ran out.");
         GameManager.Instance.ReleaseSlot(SlotIndex);
