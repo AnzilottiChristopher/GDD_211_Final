@@ -4,29 +4,27 @@ using UnityEngine.UI;
 public class DragController : MonoBehaviour
 {
     public Transform Canvas => canvasTransform;
+    public Transform InventoryContainer => inventory1_container;
 
     [SerializeField] private Image inventory1_image;
     [SerializeField] private Transform inventory1_container;
     [SerializeField] private Transform canvasTransform;
-    [SerializeField] private CookieBuilder cookieBuilder;
     [SerializeField] private Image trashZone;
 
-    public Transform InventoryContainer => inventory1_container;
-
+    // ─── Drop: trash, inventory, or reset ─────────────────────────
     public void DropItem(Item item)
     {
+        // Trash zone — just destroy the cookie
         if (RectOverlap(item.GetComponent<RectTransform>(), trashZone.GetComponent<RectTransform>()))
         {
-            if (!item.CameFromInventory)
-            {
-                cookieBuilder.ResetCookie();
-            }
-            cookieBuilder.resetFinishedCookie(item.gameObject);
+            Destroy(item.gameObject);
             return;
         }
+
+        // Inventory
         if (RectOverlap(item.GetComponent<RectTransform>(), inventory1_image.GetComponent<RectTransform>()))
         {
-            int limit = item.CameFromInventory ? 5 : 4;
+            int limit = item.CameFromInventory ? 3 : 3;
             if (inventory1_container.childCount < limit)
             {
                 item.transform.SetParent(inventory1_container, false);
@@ -44,24 +42,23 @@ public class DragController : MonoBehaviour
         }
     }
 
+    // ─── Serve cookie to customer ──────────────────────────────────
     public void ServeCustomer(Item item, Customer customer)
     {
-        // grab order data from cookiebuilder
-        int dough = cookieBuilder.GetDough();
-        var toppings = cookieBuilder.GetToppings();
-        float quality = cookieBuilder.GetCookQuality();
+        // All cookie data lives on the Cookie component — no builder needed
+        Cookie cookie = item.GetComponent<Cookie>();
+        if (cookie == null)
+        {
+            Debug.LogWarning("[DragController] Item has no Cookie component!");
+            return;
+        }
 
-        bool correct = customer.CheckOrder(dough, toppings);
-        customer.Serve(correct, quality);
-
-        // destroy the cookie item and reset the builder
-        cookieBuilder.ResetCookie();
-        
-        // TODO Fix Not destroying this game object.
-        cookieBuilder.resetFinishedCookie(item.gameObject);
-        //Destroy(item.gameObject);
+        bool correct = customer.CheckOrder(cookie.Dough, cookie.Toppings);
+        customer.Serve(correct, cookie.Quality);
+        Destroy(item.gameObject);
     }
 
+    // ─── Geometry helpers ─────────────────────────────────────────
     private bool RectOverlap(RectTransform firstRect, RectTransform secondRect)
     {
         Rect a = GetWorldRect(firstRect);

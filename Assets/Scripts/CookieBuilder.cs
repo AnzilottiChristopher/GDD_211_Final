@@ -1,17 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 
+/// <summary>
+/// Manages the cookie workstation: ingredient selection, minigame flow, and UI.
+/// Cookie data lives on the Cookie component of the instantiated prefab.
+/// </summary>
 public class CookieBuilder : MonoBehaviour
 {
-    [Header("Cookie State")]
-    private int dough = -1;
-    private List<string> toppings = new List<string>();
-    private float cookQuality = 1f;
-
     [Header("Minigames")]
     [SerializeField] private Doughminigame doughMinigame;
     [SerializeField] private Ovenminigame ovenMinigame;
@@ -33,21 +30,26 @@ public class CookieBuilder : MonoBehaviour
     [SerializeField] private GameObject ingredientPanel;
     [SerializeField] private Image doughDisplay;
     [SerializeField] private Image toppingPreview;
-    [SerializeField] private GameObject cookieItem;
     [SerializeField] private Sprite[] doughSprites;
     [SerializeField] private Sprite[] finishedCookieSprites;
     [SerializeField] private Sprite[] toppingSprites;
     [SerializeField] private Sprite[] toppingPreviewSprites;
-    [SerializeField] private Image cookieDisplay;
-    [SerializeField] private Image toppingDisplay;
+
+    [Header("Cookie Prefab")]
+    [SerializeField] private GameObject cookiePrefab;
+    // Where the cookie spawns — assign ingredientPanel or a dedicated anchor
+    [SerializeField] private Transform cookieSpawnParent;
 
     private static readonly string[] PossibleToppings = { "Barnacles", "Pearls", "Starfish Sprinkles" };
-
-    private bool isReady = false;
-    private bool isBaking = false;
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
-    public float GetCookQuality() => cookQuality;
 
+    // ─── Workstation State ────────────────────────────────────────
+    private int dough = -1;
+    private List<string> toppings = new List<string>();
+    private float cookQuality = 1f;
+    private bool isBaking = false;
+
+    // ─── Lifecycle ────────────────────────────────────────────────
     void Start()
     {
         SetTrashButtonActive(false);
@@ -56,7 +58,6 @@ public class CookieBuilder : MonoBehaviour
         ingredientPanel.SetActive(true);
         doughDisplay.gameObject.SetActive(false);
         toppingPreview.gameObject.SetActive(false);
-        cookieItem.SetActive(false);
         UpdateStatus("Select a dough and topping, then hit Bake!");
 
         if (doughMinigame != null)
@@ -80,13 +81,12 @@ public class CookieBuilder : MonoBehaviour
     // ─── Step 1: Dough Selection ───────────────────────────────────
     public void SelectDough(int newDough, Button doughButton)
     {
-        if (isBaking || isReady) return;
+        if (isBaking) return;
         dough = newDough;
         string doughName = DoughNames[newDough - 1];
         Debug.Log("Selected dough: " + doughName);
         UpdateStatus(doughName + " dough selected. Now pick a topping!");
 
-        // show dough image in build panel
         doughDisplay.sprite = doughSprites[newDough - 1];
         doughDisplay.gameObject.SetActive(true);
     }
@@ -94,14 +94,14 @@ public class CookieBuilder : MonoBehaviour
     // ─── Step 2: Topping Selection ────────────────────────────────
     public void AddTopping(string topping)
     {
-        if (isBaking || isReady) return;
+        if (isBaking) return;
         toppings.Clear();
         toppings.Add(topping);
         Debug.Log("Added topping: " + topping);
         UpdateStatus("Topping: " + topping + ". Ready to bake!");
-        
+
         int toppingIndex = System.Array.IndexOf(PossibleToppings, topping);
-        if(toppingIndex >= 0)
+        if (toppingIndex >= 0)
         {
             toppingPreview.sprite = toppingPreviewSprites[toppingIndex];
             toppingPreview.gameObject.SetActive(true);
@@ -111,7 +111,7 @@ public class CookieBuilder : MonoBehaviour
     // ─── Step 3: Bake ─────────────────────────────────────────────
     public void StartBake()
     {
-        if (isBaking || isReady) return;
+        if (isBaking) return;
 
         if (dough == -1)
         {
@@ -156,59 +156,47 @@ public class CookieBuilder : MonoBehaviour
             toppingMinigame.StartMinigame();
     }
 
-    // ─── Topping Minigame Complete → Cookie Ready ─────────────────
+    // ─── Topping Minigame Complete → Spawn Cookie Prefab ──────────
     private void OnToppingMinigameComplete()
     {
         HideAllMinigamePanels();
-        isBaking = false;
-        isReady = true;
-        //Debug.Log(isReady);
 
-        
-        // doughDisplay.transform.SetParent(cookieItem.transform, false);
-        // toppingLabel.transform.SetParent(cookieItem.transform, false);
-        cookieDisplay.sprite = finishedCookieSprites[dough - 1];
-        cookieDisplay.gameObject.SetActive(true);
-
+        // Resolve sprites
+        Sprite cookieSprite = finishedCookieSprites[dough - 1];
+        Sprite toppingSprite = null;
         int toppingIndex = System.Array.IndexOf(PossibleToppings, toppings[0]);
-        if(toppingIndex >= 0) {
-            toppingDisplay.sprite = toppingSprites[toppingIndex];
-            toppingDisplay.gameObject.SetActive(true);
-        }
-        
+        if (toppingIndex >= 0)
+            toppingSprite = toppingSprites[toppingIndex];
 
+        // Instantiate and configure the cookie
+        GameObject newCookieObj = Instantiate(cookiePrefab, cookieSpawnParent);
+        Cookie newCookie = newCookieObj.GetComponent<Cookie>();
+        if (newCookie != null)
+            newCookie.Configure(dough, toppings, cookQuality, cookieSprite, toppingSprite);
+        else
+            Debug.LogError("[CookieBuilder] cookiePrefab is missing a Cookie component!");
 
-        doughDisplay.gameObject.SetActive(false);
-        toppingPreview.gameObject.SetActive(false);
-        cookieItem.SetActive(true);
-        SetTrashButtonActive(true);
+        // If DragController isn't already set on the prefab, inject it now
+        Item itemComponent = newCookieObj.GetComponent<Item>();
+        if (itemComponent != null)
+            itemComponent.Init(FindObjectOfType<DragController>());
+
+        // Workstation is immediately free for the next cookie
+        ResetWorkstation();
         UpdateStatus("Cookie ready! Drag it to your inventory.");
     }
 
-    // ─── Reset ────────────────────────────────────────────────────
-    public void ResetCookie()
+    // ─── Reset workstation state and UI ───────────────────────────
+    private void ResetWorkstation()
     {
         dough = -1;
         toppings.Clear();
         cookQuality = 1f;
-        isReady = false;
-        //Debug.Log(isReady);
         isBaking = false;
         HideAllMinigamePanels();
 
-        //TODO remove when have actual asset
-        // doughDisplay.transform.SetParent(ingredientPanel.transform, false);
-        // toppingLabel.transform.SetParent(ingredientPanel.transform, false);
-
-        cookieItem.transform.SetParent(ingredientPanel.transform, false);
-
         SetBakeButtonActive(true);
         SetTrashButtonActive(false);
-        cookieDisplay.gameObject.SetActive(false);
-        toppingDisplay.gameObject.SetActive(false);
-        cookieDisplay.sprite = null;
-        toppingDisplay.sprite = null;
-        cookieItem.SetActive(false);
         doughDisplay.sprite = null;
         doughDisplay.gameObject.SetActive(false);
         toppingPreview.sprite = null;
@@ -217,9 +205,6 @@ public class CookieBuilder : MonoBehaviour
     }
 
     // ─── Helpers ──────────────────────────────────────────────────
-    public int GetDough() => dough;
-    public List<string> GetToppings() => toppings;
-
     private void ShowPanel(GameObject panel)
     {
         if (panel != null) panel.SetActive(true);
@@ -246,19 +231,5 @@ public class CookieBuilder : MonoBehaviour
     {
         Debug.Log("[CookieBuilder] " + msg);
         if (statusText != null) statusText.text = msg;
-    }
-    public void resetFinishedCookie(GameObject item)
-    {
-        item.transform.SetParent(ingredientPanel.transform, false);
-        RectTransform rt = item.GetComponent<RectTransform>();
-        if (rt != null)
-        {
-            rt.anchorMin = new Vector2(0.5f, 0.5f);
-            rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.pivot = new Vector2(0.5f, 0.5f);
-            rt.anchoredPosition = Vector2.zero;
-        }
-        item.SetActive(false);
-        
     }
 }

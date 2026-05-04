@@ -5,11 +5,20 @@ using System.Collections.Generic;
 public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     [SerializeField] private DragController dragController;
+
     private Vector3 startPosition;
-    private bool isDragging;
     private Vector3 startSize;
-    public bool CameFromInventory { get; private set; }
     private Customer hoveredCustomer;
+
+    public bool CameFromInventory { get; private set; }
+
+    // ─── Called by CookieBuilder after instantiating the prefab ──
+    // Use this if DragController isn't already assigned on the prefab itself
+    public void Init(DragController controller)
+    {
+        if (dragController == null)
+            dragController = controller;
+    }
 
     private void Start()
     {
@@ -18,26 +27,22 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
         hoveredCustomer = null;
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        CameFromInventory = transform.parent == dragController.InventoryContainer;
+        transform.SetParent(dragController.Canvas, true);
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
         CheckCustomerHover(eventData);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        isDragging = true;
-        CameFromInventory = transform.parent == dragController.InventoryContainer;
-        transform.SetParent(dragController.Canvas, true);
-    }
-
     public void OnPointerUp(PointerEventData eventData)
     {
-        isDragging = false;
-
         if (hoveredCustomer != null)
         {
-            // serve the customer
             dragController.ServeCustomer(this, hoveredCustomer);
             hoveredCustomer.SetHighlight(false);
             hoveredCustomer = null;
@@ -58,10 +63,8 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
         Customer found = null;
         foreach (var result in results)
         {
-
             Customer c = result.gameObject.GetComponentInParent<Customer>();
-            Debug.Log($"Hit: {result.gameObject.name} | Customer found: {(c != null ? c.gameObject.name : "NULL")} | Customer script on: {(c != null ? c.gameObject.transform.parent?.name : "N/A")}");
-
+            Debug.Log($"Hit: {result.gameObject.name} | Customer found: {(c != null ? c.gameObject.name : "NULL")}");
             if (c != null)
             {
                 found = c;
