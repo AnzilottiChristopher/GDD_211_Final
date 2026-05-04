@@ -9,11 +9,21 @@ public class DragController : MonoBehaviour
     [SerializeField] private Transform inventory1_container;
     [SerializeField] private Transform canvasTransform;
     [SerializeField] private CookieBuilder cookieBuilder;
+    [SerializeField] private Image trashZone;
 
     public Transform InventoryContainer => inventory1_container;
 
     public void DropItem(Item item)
     {
+        if (RectOverlap(item.GetComponent<RectTransform>(), trashZone.GetComponent<RectTransform>()))
+        {
+            if (!item.CameFromInventory)
+            {
+                cookieBuilder.ResetCookie();
+            }
+            cookieBuilder.resetFinishedCookie(item.gameObject);
+            return;
+        }
         if (RectOverlap(item.GetComponent<RectTransform>(), inventory1_image.GetComponent<RectTransform>()))
         {
             int limit = item.CameFromInventory ? 5 : 4;
