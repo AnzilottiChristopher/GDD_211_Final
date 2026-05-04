@@ -424,7 +424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1063342497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -573,6 +573,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a3043d5eb6ad9439fe52b3f871427b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Toppingminigame
+--- !u!224 &1215344308 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7660712001145719795, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287025034
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1287025035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -822,6 +827,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693362a1e15848344a1b9092c393119c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Doughminigame
+--- !u!1 &1803020465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3021601227966156688, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+  m_PrefabInstance: {fileID: 224357789282951567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1803020469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803020465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23424595a44b0e644afb6c3a63e51bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Clothesline
+  orderTicketPrefab: {fileID: 1951831379455343744, guid: 52455340a8a8925429f106b046f3ca00, type: 3}
+  ticketContainer: {fileID: 1215344308}
 --- !u!1 &1953827673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4072328063078587751, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
@@ -943,6 +967,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 838499974402133429, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1043913611217960046, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_text
       value: '
@@ -952,6 +980,26 @@ PrefabInstance:
     - target: {fileID: 1043913611217960046, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_VerticalAlignment
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073343147923285995, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073343147923285995, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073343147923285995, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073343147923285995, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073343147923285995, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1301370067508400040, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_Pivot.x
@@ -1061,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967751256949847687, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1979279935218124431, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2075,6 +2123,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4072328063078587751, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1953827674}
+    - targetCorrespondingSourceObject: {fileID: 3021601227966156688, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1803020469}
   m_SourcePrefab: {fileID: 100100000, guid: 343680a98d46b724db61153b2b6d1c51, type: 3}
 --- !u!1 &224357789282951568 stripped
 GameObject:
@@ -2736,7 +2787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4176804724673969710, guid: e3891ba1e1e107b46abc2880ad00c88a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6912704365389829583, guid: e3891ba1e1e107b46abc2880ad00c88a, type: 3}
       propertyPath: m_Transition

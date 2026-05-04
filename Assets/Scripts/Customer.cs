@@ -41,6 +41,7 @@ public class Customer : MonoBehaviour
         SlotIndex = slotIndex;
         patience = maxPatience;
         SetHighlight(false);
+        clothesline = FindFirstObjectByType<Clothesline>(FindObjectsInactive.Include);
 
         if (characterImage != null)
         {
