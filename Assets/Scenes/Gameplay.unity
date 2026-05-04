@@ -2460,7 +2460,7 @@ PrefabInstance:
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: 'toppingSprites.Array.data[0]'
       value: 
-      objectReference: {fileID: -6263423412507183291, guid: 8bc7306a4f70844108d6e3ef2700e48c, type: 3}
+      objectReference: {fileID: 21300000, guid: 8bc7306a4f70844108d6e3ef2700e48c, type: 3}
     - target: {fileID: 6685975257659812217, guid: ab3f095cf34c9344db09c597482bff12, type: 3}
       propertyPath: 'toppingSprites.Array.data[1]'
       value: 
@@ -3010,6 +3010,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 594773343}
     m_Modifications:
+    - target: {fileID: 3822053964283833873, guid: 28816407d8a387242ab9ba22cd03d3c9, type: 3}
+      propertyPath: padding
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822053964283833873, guid: 28816407d8a387242ab9ba22cd03d3c9, type: 3}
+      propertyPath: maxItems
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4886786295576780980, guid: 28816407d8a387242ab9ba22cd03d3c9, type: 3}
       propertyPath: trashZone
       value: 
@@ -3022,6 +3030,10 @@ PrefabInstance:
       propertyPath: canvasTransform
       value: 
       objectReference: {fileID: 594773343}
+    - target: {fileID: 5423073955560224797, guid: 28816407d8a387242ab9ba22cd03d3c9, type: 3}
+      propertyPath: m_Spacing.x
+      value: 86
+      objectReference: {fileID: 0}
     - target: {fileID: 8988663528368751111, guid: 28816407d8a387242ab9ba22cd03d3c9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3136,6 +3148,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: cookiePrefab
+      value: 
+      objectReference: {fileID: 1969331539359720252, guid: 9246e896dfda3d646a23833a7b4d4623, type: 3}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: doughDisplay
       value: 
       objectReference: {fileID: 45027445}
@@ -3176,6 +3192,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1101443362}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
+      propertyPath: cookieSpawnParent
+      value: 
+      objectReference: {fileID: 877297955}
+    - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: ovenMinigamePanel
       value: 
       objectReference: {fileID: 1954540656}
@@ -3214,7 +3234,7 @@ PrefabInstance:
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: 'toppingSprites.Array.data[0]'
       value: 
-      objectReference: {fileID: -6263423412507183291, guid: 8bc7306a4f70844108d6e3ef2700e48c, type: 3}
+      objectReference: {fileID: 21300000, guid: 8bc7306a4f70844108d6e3ef2700e48c, type: 3}
     - target: {fileID: 1144620600944345268, guid: 90500031d94515240bf68cb8b15846e9, type: 3}
       propertyPath: 'toppingSprites.Array.data[1]'
       value: 

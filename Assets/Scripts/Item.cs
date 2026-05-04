@@ -9,6 +9,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
     private Vector3 startPosition;
     private Vector3 startSize;
     private Customer hoveredCustomer;
+    private Transform originalParent; // add this field
 
     public bool CameFromInventory { get; private set; }
 
@@ -22,6 +23,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
 
     private void Start()
     {
+        originalParent = transform.parent;
         startPosition = transform.position;
         startSize = GetComponent<RectTransform>().sizeDelta;
         hoveredCustomer = null;
@@ -86,6 +88,6 @@ public class Item : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
     public void ResetPosition()
     {
         transform.position = startPosition;
-        transform.SetParent(dragController.Canvas, true);
+        transform.SetParent(originalParent, true);
     }
 }
