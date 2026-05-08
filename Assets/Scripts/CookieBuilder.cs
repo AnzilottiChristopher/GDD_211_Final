@@ -9,6 +9,8 @@ using TMPro;
 /// </summary>
 public class CookieBuilder : MonoBehaviour
 {
+    public static CookieBuilder Instance { get; private set; }
+
     [Header("Minigames")]
     [SerializeField] private Doughminigame doughMinigame;
     [SerializeField] private Ovenminigame ovenMinigame;
@@ -42,12 +44,19 @@ public class CookieBuilder : MonoBehaviour
 
     private static readonly string[] PossibleToppings = { "Barnacles", "Pearls", "Starfish Sprinkles" };
     private static readonly string[] DoughNames = { "Kelp", "Chum", "Coral", "Jelly" };
+    public Sprite GetDoughSprite(int dough) => doughSprites[dough - 1];
+    public Sprite GetToppingSprite(int index) => toppingPreviewSprites[index];
 
     // ─── Workstation State ────────────────────────────────────────
     private int dough = -1;
     private List<string> toppings = new List<string>();
     private float cookQuality = 1f;
     private bool isBaking = false;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     // ─── Lifecycle ────────────────────────────────────────────────
     void Start()

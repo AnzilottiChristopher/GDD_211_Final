@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -77,6 +78,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Time has run out");
         Debug.Log("FINAL SCORE: " + score);
         //Game Over logic
+        PlayerPrefs.SetInt("FinalScore", score);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("CreditsScreen");
     }
 
     private void UpdateTimerUI()
