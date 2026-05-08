@@ -99,7 +99,7 @@ public class Customer : MonoBehaviour
         {
             int toppingIndex = System.Array.IndexOf(PossibleToppings, targetToppings[0]);
             if (toppingIndex >= 0)
-                toppingOrderImage.sprite = GameManager.Instance.GetToppingSprite(toppingIndex);
+                toppingOrderImage.sprite = CookieBuilder.Instance.GetToppingSprite(toppingIndex);
         }
     }
 

@@ -102,15 +102,15 @@ RectTransform:
   m_GameObject: {fileID: 1753016819638003653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.30554286, y: 0.30554286, z: 0.30554286}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 662659071627190861}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 27}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.4, y: -211}
+  m_SizeDelta: {x: 997.7, y: 1095.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8758981923452880797
 CanvasRenderer:
@@ -160,6 +160,8 @@ GameObject:
   m_Component:
   - component: {fileID: 662659071627190861}
   - component: {fileID: 4507106575476652516}
+  - component: {fileID: 665629733902555204}
+  - component: {fileID: 1498317701336343203}
   m_Layer: 5
   m_Name: Order Ticket
   m_TagString: Untagged
@@ -186,8 +188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -2.2528, y: -289.5}
+  m_SizeDelta: {x: 459.8, y: 1231.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4507106575476652516
 MonoBehaviour:
@@ -205,6 +207,44 @@ MonoBehaviour:
   toppingIcon: {fileID: 3300813438021554493}
   doughLabel: {fileID: 0}
   toppingLabel: {fileID: 0}
+--- !u!222 &665629733902555204
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951831379455343744}
+  m_CullTransparentMesh: 1
+--- !u!114 &1498317701336343203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951831379455343744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7540476779966992265, guid: b878aea61ba6d4bca8139b04654e7835, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8239585373154455087
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,15 +272,15 @@ RectTransform:
   m_GameObject: {fileID: 8239585373154455087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.30554286, y: 0.30554286, z: 0.30554286}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 662659071627190861}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 143.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.39998525, y: 263}
+  m_SizeDelta: {x: 997.7, y: 1095.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6690000470143462168
 CanvasRenderer:

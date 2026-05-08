@@ -40,7 +40,7 @@ public class Clothesline : MonoBehaviour
         Sprite doughSprite   = GameManager.Instance.GetDoughSprite(dough);
         int toppingIndex     = System.Array.IndexOf(PossibleToppings, topping);
         Sprite toppingSprite = toppingIndex >= 0
-            ? GameManager.Instance.GetToppingSprite(toppingIndex)
+            ? CookieBuilder.Instance.GetToppingSprite(toppingIndex)
             : null;
 
         string doughName   = dough >= 1 && dough <= DoughNames.Length ? DoughNames[dough - 1] : "";
